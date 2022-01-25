@@ -1,0 +1,12 @@
+@media only screen and (max-width: 320px) {
+    /* For mobiles: CSS */
+}
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: CSS */
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: CSS */
+}
+
