@@ -17,9 +17,30 @@ can also be found on ('https://rapidapi.com/zakutynsky/api/CoinMarketCap/');
 
 Binance seems to have alot of utility, the problem I encounterd is that in order to use the API
 you need a Binance account and a corresponding AuthKey to actually get data */
+var coinFormEl = document.querySelector("#coin-form");
+var coinInputEl = document.querySelector("#coin-name");
+var tasks = [];
 
+//takes the typed in info
+var formSubmitHandler = function (event) {
+    // prevent page from refreshing
+    event.preventDefault();
 
+    // get value from input element
+    var coinName = coinInputEl.value.trim();
+    // console.log(coinName);
 
+    if (coinName) {
+        getTypedCoinData(coinName);
+        //clears the input field
+        coinInputEl.value = "";
+        // typedCoinContainerEl.textContent = "";
+
+    }
+    else {
+        alert("Please enter a valid Crypto Currency.");
+    }
+};
 
 
 //FETCH FUNC for the fetch request for the data for the 16 cards pass data into 
@@ -27,8 +48,7 @@ you need a Binance account and a corresponding AuthKey to actually get data */
 
 //FETCH FUNC for the search bar
 
-var getFeaturedCoinData = function (coin) {
-    console.log(coin);
+var getTypedCoinData = function (coin) {
     var apiUrl = "https://api.coingecko.com/api/v3/coins/" + coin;
 
     // make a get request to url
@@ -38,9 +58,16 @@ var getFeaturedCoinData = function (coin) {
             if (response.ok) {
                 response.json().then(function (data) {
                     console.log(data);
+                    // typedCoinDisplay(data);
                 });
             }
+            else {
+                alert("Please enter a valid Crypto Currency." + response.statusText);
+            }
         })
+        .catch(function (error) {
+            alert("Unable to connect to CoinGecko");
+        });
 };
 
 
@@ -54,4 +81,6 @@ var getFeaturedCoinData = function (coin) {
 
 
 //CALL FETCH FUNC to a function on page load to fetch the 16 cards
-getFeaturedCoinData("bitcoin");
+// getTypedCoinData("bitcoin");
+
+coinFormEl.addEventListener("submit", formSubmitHandler);
