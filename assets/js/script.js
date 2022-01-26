@@ -17,3 +17,20 @@ can also be found on ('https://rapidapi.com/zakutynsky/api/CoinMarketCap/');
 
 Binance seems to have alot of utility, the problem I encounterd is that in order to use the API
 you need a Binance account and a corresponding AuthKey to actually get data */
+
+
+
+
+
+//FETCH FUNC for the fetch request for the data for the 16 cards pass data into 
+
+//DISPLAY FETCH FUNC to display the images by recieving fetched data
+
+
+
+
+
+
+
+
+//CALL FETCH FUNC to a function on page load to fetch the 16 cards
