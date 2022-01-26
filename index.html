@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,42 +8,45 @@
     <title>Crypto-Checker!</title>
     <!-- add google font? -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
     <!-- navigation bar -->
-    <nav class="navbar">
-        <div class="container-fluid">
-            <!-- title -->
-            <h1>Crypto-Checker!</h1>
-            <div class="d-flex">
-                <!-- search form -->
-                <form id = "coin-form" class="d-flex">
-                    <input id = "coin-name" class="form-control me-2" type="search" placeholder="Crypto Name">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-                <!-- my saved coins link -->
-                <a class="nav-link" href="./saved-coins.html" target="_blank">My Saved Coins</a>                
-            </div>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo left">Crypto-Checker!</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down"></ul>
+            <form>
+                <div class="right input-field">
+                    <input id="search" type="search" required>
+                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                    <i class="material-icons">close</i>
+                </div>
+            </form>
         </div>
     </nav>
 
     <main class="container-fluid">
         <div class="row">
             <!-- fake ad image -->
-            <div class="col-2">
+            <div class="col s3">
                 <img src="./assets/images/MuskMintGifV2.gif" class="ad-image" alt="placeholder">
                 <img src="./assets/images/fake-ad1.jpg" class="ad-image" alt="placeholder">
-
+                <h4 class="row">History</h4>
+                <div id="history-container" class="card-body">
+                </div>
             </div>
+
             <!-- crypto info cards -->
-            <div id = "price-track-container" class="col-10">
+
+            <div id="price-track-container" class="col s9">
                 <!-- row 1 -->
-                <div  class="row row-cols-4">
-                    <div class="col">
-                        <div class="card">
+                <div class="row">
+                    <div class="col s3">
+                        <div class="z-depth-4 card">
                             <div class="card-body">
                                 <h5 class="card-title">Crypto Name</h5>
                                 <p class="card-text">Crypto information1</p>
@@ -51,8 +55,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="card">
+                    <div class="col s3">
+                        <div class="z-depth-4 card">
                             <div class="card-body">
                                 <h5 class="card-title">Crypto Name</h5>
                                 <p class="card-text">Crypto information1</p>
@@ -61,8 +65,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="card">
+                    <div class="col s3">
+                        <div class="z-depth-4 card">
                             <div class="card-body">
                                 <h5 class="card-title">Crypto Name</h5>
                                 <p class="card-text">Crypto information1</p>
@@ -71,8 +75,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="card">
+                    <div class="col s3">
+                        <div class="z-depth-4 card">
                             <div class="card-body">
                                 <h5 class="card-title">Crypto Name</h5>
                                 <p class="card-text">Crypto information1</p>
@@ -83,9 +87,9 @@
                     </div>
                 </div>
                 <!-- row 2 -->
-                <div class="row row-cols-4">
-                    <div class="col">
-                        <div class="card">
+                <div class="row">
+                    <div class="col s3">
+                        <div class="z-depth-4 card">
                             <div class="card-body">
                                 <h5 class="card-title">Crypto Name</h5>
                                 <p class="card-text">Crypto information1</p>
@@ -94,8 +98,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="card">
+                    <div class="col s3">
+                        <div class="z-depth-4 card">
                             <div class="card-body">
                                 <h5 class="card-title">Crypto Name</h5>
                                 <p class="card-text">Crypto information1</p>
@@ -104,8 +108,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="card">
+                    <div class="col s3">
+                        <div class="z-depth-4 card">
                             <div class="card-body">
                                 <h5 class="card-title">Crypto Name</h5>
                                 <p class="card-text">Crypto information1</p>
@@ -114,8 +118,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="card">
+                    <div class="col s3">
+                        <div class="z-depth-4 card">
                             <div class="card-body">
                                 <h5 class="card-title">Crypto Name</h5>
                                 <p class="card-text">Crypto information1</p>
@@ -124,89 +128,15 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- row 3 -->
-                <div class="row row-cols-4">
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Crypto Name</h5>
-                                <p class="card-text">Crypto information1</p>
-                                <p class="card-text">Crypto information2</p>
-                                <p class="card-text">Crypto information3</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Crypto Name</h5>
-                                <p class="card-text">Crypto information1</p>
-                                <p class="card-text">Crypto information2</p>
-                                <p class="card-text">Crypto information3</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Crypto Name</h5>
-                                <p class="card-text">Crypto information1</p>
-                                <p class="card-text">Crypto information2</p>
-                                <p class="card-text">Crypto information3</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Crypto Name</h5>
-                                <p class="card-text">Crypto information1</p>
-                                <p class="card-text">Crypto information2</p>
-                                <p class="card-text">Crypto information3</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- row 4 -->
-                <div class="row row-cols-4">
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Crypto Name</h5>
-                                <p class="card-text">Crypto information1</p>
-                                <p class="card-text">Crypto information2</p>
-                                <p class="card-text">Crypto information3</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Crypto Name</h5>
-                                <p class="card-text">Crypto information1</p>
-                                <p class="card-text">Crypto information2</p>
-                                <p class="card-text">Crypto information3</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Crypto Name</h5>
-                                <p class="card-text">Crypto information1</p>
-                                <p class="card-text">Crypto information2</p>
-                                <p class="card-text">Crypto information3</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Crypto Name</h5>
-                                <p class="card-text">Crypto information1</p>
-                                <p class="card-text">Crypto information2</p>
-                                <p class="card-text">Crypto information3</p>
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Crypto Name: Bitcoin<span><img src="https://assets.coingecko.com/coins/images/1/thumb/bitcoin.png?1547033579"></span></h5>
+                                    <p class="card-text">Crypto information1</p>
+                                    <p class="card-text">Crypto information2</p>
+                                    <p class="card-text">Crypto information3</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -216,4 +146,5 @@
     </main>
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
