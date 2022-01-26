@@ -21,52 +21,24 @@ you need a Binance account and a corresponding AuthKey to actually get data */
 
 
 
-/* Below is the search suggestion api from coinranking */
+/* Below is the live pricing api from coinranking */
 
-/* const searchSuggest = new Request("https://coinranking1.p.rapidapi.com/search-suggestions?referenceCurrencyUuid=yhjMzLPhuIDl") {
-    method: 'GET',
-    headers: {
-        "x-access-key": "3c29bda109d4290191bea7abecd0074bfe38d5634e0e6830",
-		"x-rapidapi-host": "coinranking1.p.rapidapi.com",
-		"x-rapidapi-key": "f112fe985emsh7fd3ffcf23a79fbp14c66djsnd4ab259a0c95"
-	},
-    mode: 'cors',
-    cache: 'default',
-};
-
-fetch("https://coinranking1.p.rapidapi.com/search-suggestions?referenceCurrencyUuid=yhjMzLPhuIDl", {
+fetch("https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers=1&orderBy=price&orderDirection=desc&limit=10&offset=0", {
     "method": "GET",
-	"headers": {
+    "headers": {
         "x-access-key": "3c29bda109d4290191bea7abecd0074bfe38d5634e0e6830",
-		"x-rapidapi-host": "coinranking1.p.rapidapi.com",
-		"x-rapidapi-key": "f112fe985emsh7fd3ffcf23a79fbp14c66djsnd4ab259a0c95"
-	}
-})
-.then(function (response) {
-    if (response.ok) {
-        response.json().then(function (data) {
-            console.log(data);
-        })
+        "x-rapidapi-host": "coinranking1.p.rapidapi.com",
+        "x-rapidapi-key": "f112fe985emsh7fd3ffcf23a79fbp14c66djsnd4ab259a0c95"
     }
-}); */
-
-fetch("https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers=1&orderBy=price&orderDirection=desc&limit=16&offset=0", {
-	"method": "GET",
-	"headers": {
-        "x-access-key": "3c29bda109d4290191bea7abecd0074bfe38d5634e0e6830",
-		"x-rapidapi-host": "coinranking1.p.rapidapi.com",
-		"x-rapidapi-key": "f112fe985emsh7fd3ffcf23a79fbp14c66djsnd4ab259a0c95"
-	}
 })
-.then(function (response) {
-    if (response.ok) {
-        response.json().then(function (data) {
-            console.log(data);
-        })
-    }
-});
-
-/* for (var i = 0; i < data.length; i++) {
-                    // console.log(data[i].market_cap);
-                    console.log(data[i].price);
-                    } */
+    .then(function (response) {
+        if (response.ok) {
+            response.json().then(function (something) {
+                /* console.log(something); */
+                for (var i = 0; i < something.data.coins.length; i++) {
+                    console.log(something.data.coins[i].name + " " + something.data.coins[i].price);
+                    /* console.log(something.data.coins[i].price); */
+                }
+            });
+        }
+    });
