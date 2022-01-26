@@ -1,3 +1,36 @@
+body {
+    margin: 1rem;
+}
+
+main {
+    margin-top: 1rem;
+}
+
+.ad-image {
+    width: 100%;
+    padding-top: 1rem;
+
+}
+
+.card {
+    margin: 0.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width: 320px) {
     /* For mobiles: CSS */
 }
