@@ -19,6 +19,7 @@ Binance seems to have alot of utility, the problem I encounterd is that in order
 you need a Binance account and a corresponding AuthKey to actually get data */
 var coinFormEl = document.querySelector("#coin-form");
 var coinInputEl = document.querySelector("#coin-name");
+var typedContainerEl = document.querySelector("#typed-container");
 var tasks = [];
 
 //takes the typed in info
@@ -34,6 +35,7 @@ var formSubmitHandler = function (event) {
         getTypedCoinData(coinName);
         //clears the input field
         coinInputEl.value = "";
+        typedContainerEl.textContent = "";
         // typedCoinContainerEl.textContent = "";
 
     }
@@ -76,10 +78,43 @@ var typedCoinDisplay = function(coinData) {
     console.log(coinData);
     console.log("Name: " + coinData.name);
     console.log(coinData.image.thumb);
-    console.log("Liquidity Score: " + coinData.liquidity_score);
-    console.log("Total Supply: " + coinData.market_data.total_supply);
     console.log("Current Price: " + coinData.market_data.current_price.usd);
-    console.log(coinData.description.en);      
+    console.log("Liquidity Score: " + coinData.liquidity_score);
+    console.log("Community Score: " + coinData.community_score);
+    console.log(coinData.description.en); 
+    //create a div to store searched data
+    var firstCardDivEl = document.createElement("div");
+    firstCardDivEl.classList = "card-body";
+
+    //card name and image
+    var nameEl = document.createElement("h5");
+    nameEl.classList = "card-title";
+    nameEl.textContent = coinData.name  + " ";
+    firstCardDivEl.appendChild(nameEl);
+    //add image just after the name
+    var iconEl = document.createElement("img");
+    iconEl.setAttribute("src", coinData.image.thumb);
+    nameEl.append(iconEl);
+    //show current price
+    var priceEl = document.createElement("h6");
+    priceEl.classList="card-text";
+    priceEl.textContent= "Current Price: $" + coinData.market_data.current_price.usd;
+    firstCardDivEl.appendChild(priceEl);
+    //show liquidity score
+    var liquidityEl = document.createElement("h6");
+    liquidityEl.classList="card-text";
+    liquidityEl.textContent= "Liquidity Score: " + coinData.liquidity_score;
+    firstCardDivEl.appendChild(liquidityEl);
+    //gets the community score
+    var communityEl = document.createElement("h6");
+    communityEl.classList="card-text";
+    communityEl.textContent= "Community Score: " + coinData.community_score;
+    firstCardDivEl.appendChild(communityEl);
+
+    typedContainerEl.appendChild(firstCardDivEl);
+
+
+    console.log(firstCardDivEl);
 };
 
 
