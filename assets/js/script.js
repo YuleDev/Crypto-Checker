@@ -24,6 +24,26 @@ you need a Binance account and a corresponding AuthKey to actually get data */
 
 //FETCH FUNC for the fetch request for the data for the 16 cards pass data into 
 
+
+//FETCH FUNC for the search bar
+
+var getFeaturedCoinData = function (coin) {
+    console.log(coin);
+    var apiUrl = "https://api.coingecko.com/api/v3/coins/" + coin;
+
+    // make a get request to url
+    fetch(apiUrl)
+        .then(function (response) {
+            // request was successful
+            if (response.ok) {
+                response.json().then(function (data) {
+                    console.log(data);
+                });
+            }
+        })
+};
+
+
 //DISPLAY FETCH FUNC to display the images by recieving fetched data
 
 
@@ -34,3 +54,4 @@ you need a Binance account and a corresponding AuthKey to actually get data */
 
 
 //CALL FETCH FUNC to a function on page load to fetch the 16 cards
+getFeaturedCoinData("bitcoin");
