@@ -53,12 +53,11 @@ var getTypedCoinData = function (coin) {
 
     // make a get request to url
     fetch(apiUrl)
-        .then(function (response) {
+        .then(function (response) {   
             // request was successful
             if (response.ok) {
                 response.json().then(function (data) {
-                    console.log(data);
-                    // typedCoinDisplay(data);
+                    typedCoinDisplay(data);
                 });
             }
             else {
@@ -72,6 +71,16 @@ var getTypedCoinData = function (coin) {
 
 
 //DISPLAY FETCH FUNC to display the images by recieving fetched data
+
+var typedCoinDisplay = function(coinData) {
+    console.log(coinData);
+    console.log("Name: " + coinData.name);
+    console.log(coinData.image.thumb);
+    console.log("Liquidity Score: " + coinData.liquidity_score);
+    console.log("Total Supply: " + coinData.market_data.total_supply);
+    console.log("Current Price: " + coinData.market_data.current_price.usd);
+    console.log(coinData.description.en);      
+};
 
 
 
