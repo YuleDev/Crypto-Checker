@@ -186,7 +186,6 @@ var typedCoinDisplay = function (coinData) {
     typedContainerEl.appendChild(firstCardEl);
 };
 
-
 var getMainIndex = function () {
 
     var apiUrl = "https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers=1&orderBy=price&orderDirection=desc&limit=8&offset=0";
@@ -236,6 +235,7 @@ var displayMainIndex = function (data) {
     }
 };
 
+getMainIndex();
 
 //the call to load from local storage
 loadTasks();
@@ -246,5 +246,5 @@ coinFormEl.addEventListener("submit", formSubmitHandler);
 //listen to see if a city history button has been clicked
 savedCoinsContainerEl.addEventListener("click", buttonClickHandler);
 
-getMainIndex();
+
 
