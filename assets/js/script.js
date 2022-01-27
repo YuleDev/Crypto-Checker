@@ -1,28 +1,7 @@
-/* Base url for CoinGecko = ('api.coingecko.com/api/v3'');
-CoinGecko for searchbar = ('/search')
-found on ('https://www.coingecko.com/api/documentations/v3') and ('https://www.coingecko.com/en/api/documentation');
-can also be found on ('https://rapidapi.com/coingecko/api/coingecko/');
-
-Base url for CoinRanking = ('https://api.coinranking.com/v2');
-cURL for searchbar = ('curl https://api.coinranking.com/v2/search-suggestions?query=bitco \
--H 'x-access-token: your-api-key' \
--G');
-found on ('https://developers.coinranking.com/api/documentation');
-can also be found on ('https://rapidapi.com/Coinranking/api/coinranking1/');
-
-cURL for CoinMarketCap = ('curl -H "X-CMC_PRO_API_KEY: b54bcf4d-1bca-4e8e-9a24-22ff2c3d462c" -H "Accept: application/json" -d "start=1&limit=5000&convert=USD" -G https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest');
-Want to get latest data here? = ('https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyListingsLatest');
-found on ('https://coinmarketcap.com/api/documentation/v1/#section/Quick-Start-Guide');
-can also be found on ('https://rapidapi.com/zakutynsky/api/CoinMarketCap/');
-
-Binance seems to have alot of utility, the problem I encounterd is that in order to use the API
-you need a Binance account and a corresponding AuthKey to actually get data */
 var coinFormEl = document.querySelector("#coin-form");
 var coinInputEl = document.querySelector("#coin-name");
 var typedContainerEl = document.querySelector("#typed-container");
 var savedCoinsContainerEl = document.querySelector("#saved-coins-container");
-
-
 var tasks = [];
 
 //saves the tasks variable to the local storage
@@ -33,7 +12,7 @@ var saveTasks = function () {
 //gets items from local storage
 var loadTasks = function () {
     tasks = JSON.parse(localStorage.getItem("tasks"));
-    // console.log(tasks);
+    console.log(tasks);
 
     //local storage is empty this creates an empty array
     if (!tasks) {
@@ -46,7 +25,7 @@ var loadTasks = function () {
 };
 
 //takes the typed in info
-var formSubmitHandler = function(event) {
+var formSubmitHandler = function (event) {
     // prevent page from refreshing
     event.preventDefault();
 
@@ -66,21 +45,16 @@ var formSubmitHandler = function(event) {
     }
 };
 
-
-//FETCH FUNC for the fetch request for the data for the 16 cards pass data into 
-
-
-//FETCH FUNC for the search bar
-
-var getTypedCoinData = function(coin) {
+//goes to the api to get the coins info by Coin Name and adds to the history.
+var getTypedCoinData = function (coin) {
     var apiUrl = "https://api.coingecko.com/api/v3/coins/" + coin;
 
     // make a get request to url
     fetch(apiUrl)
-        .then(function(response) {
+        .then(function (response) {
             // request was successful
             if (response.ok) {
-                response.json().then(function(data) {
+                response.json().then(function (data) {
                     // console.log(data.id);
                     for (var i = 0; i < tasks.length; i++) {
                         if (data.id === tasks[i]) {
@@ -89,45 +63,48 @@ var getTypedCoinData = function(coin) {
                             return;
                         }
                     }
-                    
+                    //calls function to display info
                     typedCoinDisplay(data);
+                    //caal function to display the save button
                     displaySavedCoinButton(data.id);
+                    //pushes the lowercased name to the tasks array
                     tasks.push(data.id);
+                    //calls the function to save the array to local storage
                     saveTasks();
                 });
             } else {
                 alert("Please enter a valid Crypto Currency." + response.statusText);
             }
         })
-        .catch(function(error) {
+        .catch(function (error) {
             alert("Unable to connect to CoinGecko");
         });
 };
 
-var getFeaturedCoinData = function(coin) {
-    // console.log(coin);
+////gets coin data by name when clicked from history.  Does not add to history.
+var getFeaturedCoinData = function (coin) {
     var apiUrl = "https://api.coingecko.com/api/v3/coins/" + coin;
-    // console.log(apiUrl);
+
     // make a get request to url
     fetch(apiUrl)
-        .then(function(response) {
+        .then(function (response) {
             // console.log(response);
             // request was successful
             if (response.ok) {
-                response.json().then(function(data) {
+                response.json().then(function (data) {
                     typedCoinDisplay(data);
                 });
             } else {
                 alert("Please enter a valid Crypto Currency." + response.statusText);
             }
         })
-        .catch(function(error) {
+        .catch(function (error) {
             alert("Unable to connect to CoinGecko");
         });
 };
 
 //displays the saved coin button
-var displaySavedCoinButton = function(coin){
+var displaySavedCoinButton = function (coin) {
     // console.log(coin);
     //creates the coin button
     var coinEl = document.createElement("button");
@@ -146,6 +123,7 @@ var buttonClickHandler = function (event) {
     // console.log(coin);
 
     if (coin) {
+        //calls the function to get the data without adding to history
         getFeaturedCoinData(coin);
 
         // clear old content
@@ -155,16 +133,8 @@ var buttonClickHandler = function (event) {
 
 
 
-//DISPLAY FETCH FUNC to display the images by recieving fetched data
-
-var typedCoinDisplay = function(coinData) {
-    // console.log(coinData);
-    // console.log("Name: " + coinData.name);
-    // console.log(coinData.image.thumb);
-    // console.log("Current Price: " + coinData.market_data.current_price.usd);
-    // console.log("Liquidity Score: " + coinData.liquidity_score);
-    // console.log("Community Score: " + coinData.community_score);
-    // console.log(coinData.description.en); 
+//display the fetched data to the HTML
+var typedCoinDisplay = function (coinData) {
     var numb = coinData.market_data.current_price.usd;
     var numby = coinData.developer_data.subscribers;
 
@@ -213,12 +183,6 @@ var typedCoinDisplay = function(coinData) {
 
     //adds this to the HTML
     typedContainerEl.appendChild(firstCardEl);
-
-    
-
-    // console.log(separator(numb));
-    // console.log(firstCardEl);
-    
 };
 
 //adds commas to the current price
@@ -229,24 +193,10 @@ function separator(numb) {
 };
 
 
+//the call to load from local storage
+loadTasks();
 
-// Math.Floor Test
-// var number = 36763.28022490608;
-// console.log(number);
-// var newNumber = Math.floor(number);
-// console.log(newNumber);
-// console.log(separator(newNumber));
-
-
-
-
-
-
-
-
-//CALL FETCH FUNC to a function on page load to fetch the 16 cards
-// getTypedCoinData("bitcoin");
-
+//listens to see what coin was typed in
 coinFormEl.addEventListener("submit", formSubmitHandler);
 
 //listen to see if a city history button has been clicked
