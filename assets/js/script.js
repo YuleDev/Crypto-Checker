@@ -20,6 +20,7 @@ you need a Binance account and a corresponding AuthKey to actually get data */
 var coinFormEl = document.querySelector("#coin-form");
 var coinInputEl = document.querySelector("#coin-name");
 var typedContainerEl = document.querySelector("#typed-container");
+var savedCoinsContainerEl = document.querySelector("#saved-coins-container");
 
 
 var tasks = [];
@@ -60,6 +61,7 @@ var getTypedCoinData = function(coin) {
             if (response.ok) {
                 response.json().then(function(data) {
                     typedCoinDisplay(data);
+                    displaySavedCoinButton(data.name);
                 });
             } else {
                 alert("Please enter a valid Crypto Currency." + response.statusText);
@@ -68,6 +70,19 @@ var getTypedCoinData = function(coin) {
         .catch(function(error) {
             alert("Unable to connect to CoinGecko");
         });
+};
+
+//displays the saved coin button
+var displaySavedCoinButton = function(coin){
+    console.log(coin);
+    //creates the coin button
+    var coinEl = document.createElement("button");
+    coinEl.setAttribute("data-coin", coin);
+    coinEl.classList = "btn";
+    coinEl.textContent = coin;
+
+    //add the button to the HTML
+    savedCoinsContainerEl.appendChild(coinEl);
 };
 
 
@@ -144,6 +159,11 @@ function separator(numb) {
     return str.join(".");
 };
 
+var number = 36763.28022490608;
+console.log(number);
+var newNumber = Math.floor(number);
+console.log(newNumber);
+console.log(separator(newNumber));
 
 
 
@@ -156,3 +176,6 @@ function separator(numb) {
 // getTypedCoinData("bitcoin");
 
 coinFormEl.addEventListener("submit", formSubmitHandler);
+
+//listen to see if a city history button has been clicked
+// savedCoinsContainerEl.addEventListener("click", buttonClickHandler);
