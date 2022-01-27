@@ -42,7 +42,7 @@ var displayMainIndex = function (data) {
         var imgElement = document.querySelector(forIcon);
         imgElement.setAttribute("src", data[i].iconUrl);
 
-        var numberBeauty = Math.floor(data[0].price);
+        var numberBeauty = Math.floor(data[i].price);
         priceElement.textContent = separator(numberBeauty);
     }
 };
