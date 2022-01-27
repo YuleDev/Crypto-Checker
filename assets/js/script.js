@@ -20,7 +20,7 @@ you need a Binance account and a corresponding AuthKey to actually get data */
 var coinFormEl = document.querySelector("#coin-form");
 var coinInputEl = document.querySelector("#coin-name");
 var typedContainerEl = document.querySelector("#typed-container");
-var descriptionContainerEl = document.querySelector("#description-container");
+
 
 var tasks = [];
 
@@ -38,7 +38,7 @@ var formSubmitHandler = function(event) {
         //clears the input field
         coinInputEl.value = "";
         typedContainerEl.textContent = "";
-        descriptionContainerEl.textContent = "";
+        // descriptionContainerEl.textContent = "";
     } else {
         alert("Please enter a valid Crypto Currency.");
     }
@@ -114,19 +114,19 @@ var typedCoinDisplay = function(coinData) {
     typedContainerEl.appendChild(firstCardEl);
 
     //create a div to store the description
-    var secondCardEl = document.createElement("div");
-    secondCardEl.classList = "card-body";
-    //main description of the coin
-    var descriptionEl = document.createElement("p");
-    descriptionEl.classList = "card-text";
-    descriptionEl.textContent = coinData.description.en;
-    secondCardEl.appendChild(descriptionEl);
-    //adds to the HTML
-    descriptionContainerEl.appendChild(descriptionEl);
+    // var secondCardEl = document.createElement("div");
+    // secondCardEl.classList = "card-body";
+    // //main description of the coin
+    // var descriptionEl = document.createElement("p");
+    // descriptionEl.classList = "card-text";
+    // descriptionEl.textContent = coinData.description.en;
+    // secondCardEl.appendChild(descriptionEl);
+    // //adds to the HTML
+    // descriptionContainerEl.appendChild(descriptionEl);
 
     console.log(separator(numb));
     console.log(firstCardEl);
-    console.log(secondCardEl);
+    // console.log(secondCardEl);
 };
 
 //adds commas to the current price
