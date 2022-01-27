@@ -114,7 +114,7 @@ var typedCoinDisplay = function(coinData) {
     //get the coinGecko ranking
     var geckoScoreEl = document.createElement("h6");
     geckoScoreEl.classList = "card-text";
-    geckoScoreEl.textContent = "Coin Gecko Rank: " + coinData.coingecko_score;
+    geckoScoreEl.textContent = "Coin Gecko Score: " + coinData.coingecko_score;
     firstCardEl.appendChild(geckoScoreEl);
     //coinGecko Rank
     var geckoRankEl = document.createElement("h6");
