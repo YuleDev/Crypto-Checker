@@ -115,20 +115,20 @@ var typedCoinDisplay = function(coinData) {
     //adds this to the HTML
     typedContainerEl.appendChild(firstCardEl); 
 
-    //create a div to store the description
-    var secondCardEl = document.createElement("div");
-    secondCardEl.classList="card-body";
-    //main description of the coin
-    var descriptionEl = document.createElement("p");
-    descriptionEl.classList="card-text";
-    descriptionEl.textContent = coinData.description.en;
-    secondCardEl.appendChild(descriptionEl);
-    //adds to the HTML
-    descriptionContainerEl.appendChild(descriptionEl);
+    // //create a div to store the description
+    // var secondCardEl = document.createElement("div");
+    // secondCardEl.classList="card-body";
+    // //main description of the coin
+    // var descriptionEl = document.createElement("div");
+    // descriptionEl.classList="card-text";
+    // descriptionEl.textContent = coinData.description.en;
+    // secondCardEl.appendChild(descriptionEl);
+    // //adds to the HTML
+    // descriptionContainerEl.appendChild(descriptionEl);
 
     console.log(separator(numb));
     console.log(firstCardEl);
-    console.log(secondCardEl);
+    // console.log(secondCardEl);
 };
 
 //adds commas to the current price
