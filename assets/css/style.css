@@ -2,8 +2,43 @@ body {
     margin: 1rem;
 }
 
-.navbar {
-    padding: 0 10px 0 10px;
+.nav-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: #011627;
+}
+
+.title {
+    display: flex;
+    padding-left: 10px;
+}
+
+.search-form {
+    display: flex;
+    margin-left: auto;
+}
+
+h1 {
+    margin: 0;
+    font-size: 3rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-end;
+}
+
+.hero {
+    background-image: url("../images/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    height: 20vw;
+    position: relative;
+
 }
 
 main {
@@ -11,9 +46,8 @@ main {
 }
 
 .ad-image {
-    width: 80%;
-    height: auto;
-    padding: 1rem;
+    width: 70%;
+    margin: 2rem 4rem 2rem 4rem;
 }
 
 h4 {
@@ -22,14 +56,58 @@ h4 {
 
 .card {
     margin: 0.5rem;
+    border: none;
 }
 
+.card-header {
+    background-color: #002855;
+    color: white;
+}
 
+/* .card-body {
+    background-color: #013a63;
+    color: white;
+} */
 
+.btn {
+    background-color:transparent;
+    border: none;
+    color: transparent;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    outline: 0;
+}
 
+.bi-suit-heart-fill {
+    color: #99000d;
+    display: flex;
+    margin-left: 90%;
+    font-size: 1.3rem;
+}
 
+footer {
+    height: 7rem;
+    width: 100%;
+    background-color: #011627;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-left: 10px;
 
+}
 
+.git-link {
+    display: flex;
+    padding: 20px;
+    margin-left: auto;
+}
+
+.bi-github {
+    color: white;
+    font-size: 3rem;
+}
 
 
 

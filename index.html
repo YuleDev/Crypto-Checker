@@ -9,139 +9,153 @@
     <!-- add google font? -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
     <!-- navigation bar -->
     <nav>
-        <div class="#d1c4e9 deep-purple lighten-4 lighten-2 nav-wrapper">
-            <a href="#" class="brand-logo left">Crypto-Checker!</a>
-            <ul id="nav-mobile" class="left hide-on-med-and-down"></ul>
-            <form id="coin-form">
-                <div class="right input-field">
-                    <input id="coin-name" type="search" required>
-                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                    <i class="material-icons">close</i>
-                </div>
-            </form>
+        <div class="nav-wrapper">
+            <div class="title">
+                <h1>Crypto-Checker!</h1>
+            </div>
+            <div class="search-form">
+                <form id="coin-form">
+                    <div class="input-field">
+                        <input id="coin-name" type="search" required>
+                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                        <i class="material-icons">close</i>
+                    </div>
+                </form>
+            </div>
         </div>
     </nav>
+
+    <!-- hero section -->
+    <section>
+        <div class="hero"></div>
+    </section>
+
 
     <main class="container-fluid">
         <div class="row">
             <!-- fake ad image -->
-            <div class="col s3">
+            <div class="col-3">
                 <img src="./assets/images/MuskMintGifV2.gif" class="ad-image" alt="placeholder">
-                <h4 class="left row">History</h4>
-                <div id="history-container" class="card-body">
-                </div>
             </div>
 
             <!-- crypto info cards -->
-
-            <div id="price-track-container" class="col s9">
+            <div id="price-track-container" class="col-9">
                 <!-- row 1 -->
                 <div class="row">
-                    <div class="col s3">
-                        <div class="z-depth-4 card">
-                            <div class="card-body #ff5252 red accent-2">
-                                <h5 class="card-title">Crypto Name</h5>
-                                <p class="card-text">Crypto information1</p>
-                                <p class="card-text">Crypto information2</p>
-                                <p class="card-text">Crypto information3</p>
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><span>Crypto Name</span> </h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text"><span>Crypto information1</span></p>
+                                <p class="card-text"><span>Crypto information2</span></p>
+                                <p class="card-text"><span>Crypto information3</span><i class="bi bi-suit-heart-fill"></i></p>
+                                    
                             </div>
                         </div>
                     </div>
-                    <div class="col s3">
-                        <div class="z-depth-4 card">
-                            <div class="card-body #ff5252 red accent-2">
-                                <h5 class="card-title">Crypto Name</h5>
-                                <p class="card-text">Crypto information1</p>
-                                <p class="card-text">Crypto information2</p>
-                                <p class="card-text">Crypto information3</p>
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><span>Crypto Name</span> </h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text"><span>Crypto information1</span></p>
+                                <p class="card-text"><span>Crypto information2</span></p>
+                                <p class="card-text"><span>Crypto information3</span></p>
                             </div>
                         </div>
                     </div>
-                    <div class="col s3">
-                        <div class="z-depth-4 card">
-                            <div class="card-body #ff5252 red accent-2">
-                                <h5 class="card-title">Crypto Name</h5>
-                                <p class="card-text">Crypto information1</p>
-                                <p class="card-text">Crypto information2</p>
-                                <p class="card-text">Crypto information3</p>
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><span>Crypto Name</span> </h5>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col s3">
-                        <div class="z-depth-4 card">
-                            <div class="card-body #ff5252 red accent-2">
-                                <h5 class="card-title">Crypto Name</h5>
-                                <p class="card-text">Crypto information1</p>
-                                <p class="card-text">Crypto information2</p>
-                                <p class="card-text">Crypto information3</p>
+                            <div class="card-body">
+                                <p class="card-text"><span>Crypto information1</span></p>
+                                <p class="card-text"><span>Crypto information2</span></p>
+                                <p class="card-text"><span>Crypto information3</span></p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- row 2 -->
                 <div class="row">
-                    <div class="col s3">
-                        <div class="z-depth-4 card">
-                            <div class="card-body #ff5252 red accent-2">
-                                <h5 class="card-title">Crypto Name</h5>
-                                <p class="card-text">Crypto information1</p>
-                                <p class="card-text">Crypto information2</p>
-                                <p class="card-text">Crypto information3</p>
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><span>Crypto Name</span> </h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text"><span>Crypto information1</span></p>
+                                <p class="card-text"><span>Crypto information2</span></p>
+                                <p class="card-text"><span>Crypto information3</span></p>
                             </div>
                         </div>
                     </div>
-                    <div class="col s3">
-                        <div class="z-depth-4 card">
-                            <div class="card-body #ff5252 red accent-2">
-                                <h5 class="card-title">Crypto Name</h5>
-                                <p class="card-text">Crypto information1</p>
-                                <p class="card-text">Crypto information2</p>
-                                <p class="card-text">Crypto information3</p>
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><span>Crypto Name</span> </h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text"><span>Crypto information1</span></p>
+                                <p class="card-text"><span>Crypto information2</span></p>
+                                <p class="card-text"><span>Crypto information3</span></p>
                             </div>
                         </div>
                     </div>
-                    <div class="col s3">
-                        <div class="z-depth-4 card">
-                            <div class="card-body #ff5252 red accent-2">
-                                <h5 class="card-title">Crypto Name</h5>
-                                <p class="card-text">Crypto information1</p>
-                                <p class="card-text">Crypto information2</p>
-                                <p class="card-text">Crypto information3</p>
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><span>Crypto Name</span> </h5>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col s3">
-                        <div class="z-depth-4 card">
-                            <div class="card-body #ff5252 red accent-2">
-                                <h5 class="card-title">Crypto Name</h5>
-                                <p class="card-text">Crypto information1</p>
-                                <p class="card-text">Crypto information2</p>
-                                <p class="card-text">Crypto information3</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s12">
-                            <div id="typed-container" class="card">
-                                <div class="card-body #ff5252 red accent-2">
-                                    <h5 class="card-title">Crypto Name: Bitcoin<span><img src="https://assets.coingecko.com/coins/images/1/thumb/bitcoin.png?1547033579"></span></h5>
-                                    <p class="card-text">Crypto information1</p>
-                                    <p class="card-text">Crypto information2</p>
-                                    <p class="card-text">Crypto information3</p>
-                                </div>
+                            <div class="card-body">
+                                <p class="card-text"><span>Crypto information1</span></p>
+                                <p class="card-text"><span>Crypto information2</span></p>
+                                <p class="card-text"><span>Crypto information3</span></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <!-- saved coins container -->
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>My Saved Coins</h4>
+                    </div>
+                    <div id="saved-coins-container" class="card-body"></div>
+                </div>
+            </div>
+            <!-- searched coins container -->
+            <div class="col-9">
+                <div id="typed-container" class="card"></div>
+            </div>
+        </div>
     </main>
+
+    <footer>
+        <div>
+            <h5>&copy;Crypto-Checker! by Kole Ervine, John Clark, Jordan Otterson, and Kelly Lee </h5>
+        </div>
+        <div class="git-link">
+            <a href="https://github.com/BullMooseDev/TEAMPROJ1" target="_blank"><i class="bi bi-github"></i></a>
+        </div>
+    </footer>
+    
     <script src="./assets/js/script.js"></script>
 </body>
 
