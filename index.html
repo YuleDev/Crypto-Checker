@@ -9,7 +9,6 @@
     <!-- add google font? -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
@@ -39,90 +38,94 @@
     </section>
 
 
-    <main class="container-fluid">
-        <div class="row">
-            <!-- fake ad image -->
-            <div class="col-3">
-                <img src="./assets/images/MuskMintGifV2.gif" class="ad-image" alt="placeholder">
-            </div>
-
+    <main class="grid-container">
+        <div class="trending-crypto grid-x">
             <!-- crypto info cards -->
-            <div id="price-track-container" class="col-9">
+            <div id="price-track-container" class="cell">
+                <!-- header for trending crypto -->
+                <header>
+                    <h2>Top Trending Crypto</h2>
+                </header>
                 <!-- row 1 -->
-                <div class="row">
-                    <div class="col-4">
+                <div class="grid-x">
+                    <div class="cell small-4">
                         <div class="card">
-                            <div class="card-header">
+                            <div class="card-divider">
                                 <h5><span>Crypto Name</span> </h5>
                             </div>
-                            <div class="card-body">
+                            <div class="card-section">
                                 <p class="card-text"><span>Crypto information1</span></p>
                                 <p class="card-text"><span>Crypto information2</span></p>
-                                <p class="card-text"><span>Crypto information3</span><i class="bi bi-suit-heart-fill"></i></p>
+                                <p class="card-text"><span>Crypto information3</span></p>
                                     
                             </div>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="cell small-4">
                         <div class="card">
-                            <div class="card-header">
+                            <div class="card-divider">
                                 <h5><span>Crypto Name</span> </h5>
                             </div>
-                            <div class="card-body">
+                            <div class="card-section">
                                 <p class="card-text"><span>Crypto information1</span></p>
                                 <p class="card-text"><span>Crypto information2</span></p>
                                 <p class="card-text"><span>Crypto information3</span></p>
+                                    
                             </div>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="cell small-4">
                         <div class="card">
-                            <div class="card-header">
+                            <div class="card-divider">
                                 <h5><span>Crypto Name</span> </h5>
                             </div>
-                            <div class="card-body">
+                            <div class="card-section">
                                 <p class="card-text"><span>Crypto information1</span></p>
                                 <p class="card-text"><span>Crypto information2</span></p>
                                 <p class="card-text"><span>Crypto information3</span></p>
+                                    
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- row 2 -->
-                <div class="row">
-                    <div class="col-4">
+                <div class="grid-x">
+                    <div class="cell small-4">
                         <div class="card">
-                            <div class="card-header">
+                            <div class="card-divider">
                                 <h5><span>Crypto Name</span> </h5>
                             </div>
-                            <div class="card-body">
+                            <div class="card-section">
                                 <p class="card-text"><span>Crypto information1</span></p>
                                 <p class="card-text"><span>Crypto information2</span></p>
                                 <p class="card-text"><span>Crypto information3</span></p>
+                                    
                             </div>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="cell small-4">
                         <div class="card">
-                            <div class="card-header">
+                            <div class="card-divider">
                                 <h5><span>Crypto Name</span> </h5>
                             </div>
-                            <div class="card-body">
+                            <div class="card-section">
                                 <p class="card-text"><span>Crypto information1</span></p>
                                 <p class="card-text"><span>Crypto information2</span></p>
                                 <p class="card-text"><span>Crypto information3</span></p>
+                                    
                             </div>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="cell small-4">
                         <div class="card">
-                            <div class="card-header">
+                            <div class="card-divider">
                                 <h5><span>Crypto Name</span> </h5>
                             </div>
-                            <div class="card-body">
+                            <div class="card-section">
                                 <p class="card-text"><span>Crypto information1</span></p>
                                 <p class="card-text"><span>Crypto information2</span></p>
                                 <p class="card-text"><span>Crypto information3</span></p>
+                                    
                             </div>
                         </div>
                     </div>
@@ -130,18 +133,21 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="saved-coins grid-x">
             <!-- saved coins container -->
-            <div class="col-3">
-                <div class="card">
-                    <div class="card-header">
+            <div class="cell small-4">
+                <div class="card saved">
+                    <div class="card-divider">
                         <h4>My Saved Coins</h4>
                     </div>
-                    <div id="saved-coins-container" class="card-body"></div>
+                    <div id="saved-coins-container" class="card-section"></div>
+                </div>
+                <div id="clear-button">
+                    <button class="btn">Clear Saved Coins</button>
                 </div>
             </div>
             <!-- searched coins container -->
-            <div class="col-9">
+            <div class="cell small-8">
                 <div id="typed-container" class="card"></div>
             </div>
         </div>

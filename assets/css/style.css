@@ -45,9 +45,16 @@ main {
     margin-top: 1rem;
 }
 
-.ad-image {
-    width: 70%;
-    margin: 2rem 4rem 2rem 4rem;
+.trending-crypto {
+    border-bottom: 2px solid #011627;
+    padding-bottom: 30px;
+
+}
+
+header {
+    text-align: center;
+    border-bottom: 2px solid #011627;
+    margin: 30px 0 30px 0;
 }
 
 h4 {
@@ -59,16 +66,16 @@ h4 {
     border: none;
 }
 
-.card-header {
+.card-divider {
     background-color: #002855;
     color: white;
 }
 
-/* .card-body {
+/* .card-section {
     background-color: #013a63;
     color: white;
 } */
-
+/* 
 .btn {
     background-color:transparent;
     border: none;
@@ -77,13 +84,31 @@ h4 {
     font-size: 16px;
     cursor: pointer;
     outline: 0;
+} */
+
+.saved-coins {
+    padding: 20px 0 20px 0;
 }
 
-.bi-suit-heart-fill {
-    color: #99000d;
-    display: flex;
-    margin-left: 90%;
-    font-size: 1.3rem;
+.saved {
+    border: 2px solid #011627;
+}
+
+.btn {
+    background-color: #014f86;
+}
+
+#clear-button {
+    text-align: center;
+}
+
+#typed-container {
+    background-color: #002855;
+    color: white;
+}
+
+h5 {
+    font-weight: bolder;
 }
 
 footer {
