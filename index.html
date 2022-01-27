@@ -19,9 +19,9 @@
         <div class="#d1c4e9 deep-purple lighten-4 lighten-2 nav-wrapper">
             <a href="#" class="brand-logo left">Crypto-Checker!</a>
             <ul id="nav-mobile" class="left hide-on-med-and-down"></ul>
-            <form>
+            <form id="coin-form">
                 <div class="right input-field">
-                    <input id="search" type="search" required>
+                    <input id="coin-name" type="search" required>
                     <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                     <i class="material-icons">close</i>
                 </div>
@@ -34,8 +34,7 @@
             <!-- fake ad image -->
             <div class="col s3">
                 <img src="./assets/images/MuskMintGifV2.gif" class="ad-image" alt="placeholder">
-                <img src="./assets/images/fake-ad1.jpg" class="ad-image" alt="placeholder">
-                <h4 class="row">History</h4>
+                <h4 class="left row">History</h4>
                 <div id="history-container" class="card-body">
                 </div>
             </div>
@@ -130,7 +129,7 @@
                     </div>
                     <div class="row">
                         <div class="col s12">
-                            <div class="card">
+                            <div id="typed-container" class="card">
                                 <div class="card-body #ff5252 red accent-2">
                                     <h5 class="card-title">Crypto Name: Bitcoin<span><img src="https://assets.coingecko.com/coins/images/1/thumb/bitcoin.png?1547033579"></span></h5>
                                     <p class="card-text">Crypto information1</p>
