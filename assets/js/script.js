@@ -20,12 +20,12 @@ you need a Binance account and a corresponding AuthKey to actually get data */
 var coinFormEl = document.querySelector("#coin-form");
 var coinInputEl = document.querySelector("#coin-name");
 var typedContainerEl = document.querySelector("#typed-container");
-var descriptionContainerEl = document.querySelector("#description-container");
+
 
 var tasks = [];
 
 //takes the typed in info
-var formSubmitHandler = function (event) {
+var formSubmitHandler = function(event) {
     // prevent page from refreshing
     event.preventDefault();
 
@@ -38,9 +38,8 @@ var formSubmitHandler = function (event) {
         //clears the input field
         coinInputEl.value = "";
         typedContainerEl.textContent = "";
-        descriptionContainerEl.textContent = "";
-    }
-    else {
+        // descriptionContainerEl.textContent = "";
+    } else {
         alert("Please enter a valid Crypto Currency.");
     }
 };
@@ -51,23 +50,22 @@ var formSubmitHandler = function (event) {
 
 //FETCH FUNC for the search bar
 
-var getTypedCoinData = function (coin) {
+var getTypedCoinData = function(coin) {
     var apiUrl = "https://api.coingecko.com/api/v3/coins/" + coin;
 
     // make a get request to url
     fetch(apiUrl)
-        .then(function (response) {   
+        .then(function(response) {
             // request was successful
             if (response.ok) {
-                response.json().then(function (data) {
+                response.json().then(function(data) {
                     typedCoinDisplay(data);
                 });
-            }
-            else {
+            } else {
                 alert("Please enter a valid Crypto Currency." + response.statusText);
             }
         })
-        .catch(function (error) {
+        .catch(function(error) {
             alert("Unable to connect to CoinGecko");
         });
 };
@@ -84,14 +82,14 @@ var typedCoinDisplay = function(coinData) {
     // console.log("Community Score: " + coinData.community_score);
     // console.log(coinData.description.en); 
     var numb = coinData.market_data.current_price.usd;
-    
+
     //create a div to store searched data
     var firstCardEl = document.createElement("div");
-    firstCardEl.classList = "card-body";
+    firstCardEl.classList = "z-depth-4 card-body #ff5252 red accent-2";
     //card name and image
     var nameEl = document.createElement("h5");
     nameEl.classList = "card-title";
-    nameEl.textContent = coinData.name  + " ";
+    nameEl.textContent = coinData.name + " ";
     firstCardEl.appendChild(nameEl);
     //add image just after the name
     var iconEl = document.createElement("img");
@@ -99,36 +97,36 @@ var typedCoinDisplay = function(coinData) {
     nameEl.append(iconEl);
     //show current price
     var priceEl = document.createElement("h6");
-    priceEl.classList="card-text";
-    priceEl.textContent= "Current Price: $" + separator(numb);
+    priceEl.classList = "card-text";
+    priceEl.textContent = "Current Price: $" + separator(numb);
     firstCardEl.appendChild(priceEl);
     //show liquidity score
     var liquidityEl = document.createElement("h6");
-    liquidityEl.classList="card-text";
-    liquidityEl.textContent= "Liquidity Score: " + coinData.liquidity_score;
+    liquidityEl.classList = "card-text";
+    liquidityEl.textContent = "Liquidity Score: " + coinData.liquidity_score;
     firstCardEl.appendChild(liquidityEl);
     //gets the community score
     var communityEl = document.createElement("h6");
-    communityEl.classList="card-text";
-    communityEl.textContent= "Community Score: " + coinData.community_score;
+    communityEl.classList = "card-text";
+    communityEl.textContent = "Community Score: " + coinData.community_score;
     firstCardEl.appendChild(communityEl);
     //adds this to the HTML
-    typedContainerEl.appendChild(firstCardEl); 
+    typedContainerEl.appendChild(firstCardEl);
 
     //create a div to store the description
-    var secondCardEl = document.createElement("div");
-    secondCardEl.classList="card-body";
-    //main description of the coin
-    var descriptionEl = document.createElement("p");
-    descriptionEl.classList="card-text";
-    descriptionEl.textContent = coinData.description.en;
-    secondCardEl.appendChild(descriptionEl);
-    //adds to the HTML
-    descriptionContainerEl.appendChild(descriptionEl);
+    // var secondCardEl = document.createElement("div");
+    // secondCardEl.classList = "card-body";
+    // //main description of the coin
+    // var descriptionEl = document.createElement("p");
+    // descriptionEl.classList = "card-text";
+    // descriptionEl.textContent = coinData.description.en;
+    // secondCardEl.appendChild(descriptionEl);
+    // //adds to the HTML
+    // descriptionContainerEl.appendChild(descriptionEl);
 
     console.log(separator(numb));
     console.log(firstCardEl);
-    console.log(secondCardEl);
+    // console.log(secondCardEl);
 };
 
 //adds commas to the current price
