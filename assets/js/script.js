@@ -150,6 +150,8 @@ function separator(numb) {
 
 
 
+
+
 //CALL FETCH FUNC to a function on page load to fetch the 16 cards
 // getTypedCoinData("bitcoin");
 
