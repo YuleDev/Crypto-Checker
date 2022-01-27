@@ -19,6 +19,9 @@ Binance seems to have alot of utility, the problem I encounterd is that in order
 you need a Binance account and a corresponding AuthKey to actually get data */
 var coinFormEl = document.querySelector("#coin-form");
 var coinInputEl = document.querySelector("#coin-name");
+var typedContainerEl = document.querySelector("#typed-container");
+var descriptionContainerEl = document.querySelector("#description-container");
+
 var tasks = [];
 
 //takes the typed in info
@@ -34,8 +37,8 @@ var formSubmitHandler = function (event) {
         getTypedCoinData(coinName);
         //clears the input field
         coinInputEl.value = "";
-        // typedCoinContainerEl.textContent = "";
-
+        typedContainerEl.textContent = "";
+        descriptionContainerEl.textContent = "";
     }
     else {
         alert("Please enter a valid Crypto Currency.");
@@ -53,12 +56,11 @@ var getTypedCoinData = function (coin) {
 
     // make a get request to url
     fetch(apiUrl)
-        .then(function (response) {
+        .then(function (response) {   
             // request was successful
             if (response.ok) {
                 response.json().then(function (data) {
-                    console.log(data);
-                    // typedCoinDisplay(data);
+                    typedCoinDisplay(data);
                 });
             }
             else {
@@ -73,6 +75,68 @@ var getTypedCoinData = function (coin) {
 
 //DISPLAY FETCH FUNC to display the images by recieving fetched data
 
+var typedCoinDisplay = function(coinData) {
+    // console.log(coinData);
+    // console.log("Name: " + coinData.name);
+    // console.log(coinData.image.thumb);
+    // console.log("Current Price: " + coinData.market_data.current_price.usd);
+    // console.log("Liquidity Score: " + coinData.liquidity_score);
+    // console.log("Community Score: " + coinData.community_score);
+    // console.log(coinData.description.en); 
+    var numb = coinData.market_data.current_price.usd;
+    
+    //create a div to store searched data
+    var firstCardEl = document.createElement("div");
+    firstCardEl.classList = "card-body";
+    //card name and image
+    var nameEl = document.createElement("h5");
+    nameEl.classList = "card-title";
+    nameEl.textContent = coinData.name  + " ";
+    firstCardEl.appendChild(nameEl);
+    //add image just after the name
+    var iconEl = document.createElement("img");
+    iconEl.setAttribute("src", coinData.image.thumb);
+    nameEl.append(iconEl);
+    //show current price
+    var priceEl = document.createElement("h6");
+    priceEl.classList="card-text";
+    priceEl.textContent= "Current Price: $" + separator(numb);
+    firstCardEl.appendChild(priceEl);
+    //show liquidity score
+    var liquidityEl = document.createElement("h6");
+    liquidityEl.classList="card-text";
+    liquidityEl.textContent= "Liquidity Score: " + coinData.liquidity_score;
+    firstCardEl.appendChild(liquidityEl);
+    //gets the community score
+    var communityEl = document.createElement("h6");
+    communityEl.classList="card-text";
+    communityEl.textContent= "Community Score: " + coinData.community_score;
+    firstCardEl.appendChild(communityEl);
+    //adds this to the HTML
+    typedContainerEl.appendChild(firstCardEl); 
+
+    //create a div to store the description
+    var secondCardEl = document.createElement("div");
+    secondCardEl.classList="card-body";
+    //main description of the coin
+    var descriptionEl = document.createElement("p");
+    descriptionEl.classList="card-text";
+    descriptionEl.textContent = coinData.description.en;
+    secondCardEl.appendChild(descriptionEl);
+    //adds to the HTML
+    descriptionContainerEl.appendChild(descriptionEl);
+
+    console.log(separator(numb));
+    console.log(firstCardEl);
+    console.log(secondCardEl);
+};
+
+//adds commas to the current price
+function separator(numb) {
+    var str = numb.toString().split(".");
+    str[0] = str[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return str.join(".");
+};
 
 
 
