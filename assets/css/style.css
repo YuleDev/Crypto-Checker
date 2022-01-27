@@ -129,9 +129,8 @@ footer {
     margin-left: auto;
 }
 
-.bi-github {
-    color: white;
-    font-size: 3rem;
+.github-icon {
+    height: 10%
 }
 
 
