@@ -30,7 +30,6 @@ var displayMainIndex = function (data) {
     
     for (var i = 0; i < data.length; i++) {
         var forName = "#name" + [i];
-        console.log(forName);
         var nameElement = document.querySelector(forName);
         nameElement.textContent = data[i].name;
         
