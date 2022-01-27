@@ -19,11 +19,9 @@ can also be found on ('https://rapidapi.com/zakutynsky/api/CoinMarketCap/');
 Binance seems to have alot of utility, the problem I encounterd is that in order to use the API
 you need a Binance account and a corresponding AuthKey to actually get data */
 
+var apiUrl = "https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers=1&orderBy=price&orderDirection=desc&limit=8&offset=0";
 
-
-/* Below is the live pricing api from coinranking */
-
-fetch("https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers=1&orderBy=price&orderDirection=desc&limit=10&offset=0", {
+fetch(apiUrl, {
     "method": "GET",
     "headers": {
         "x-access-key": "3c29bda109d4290191bea7abecd0074bfe38d5634e0e6830",
@@ -33,12 +31,26 @@ fetch("https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhu
 })
     .then(function (response) {
         if (response.ok) {
-            response.json().then(function (something) {
-                /* console.log(something); */
-                for (var i = 0; i < something.data.coins.length; i++) {
-                    console.log(something.data.coins[i].name + " " + something.data.coins[i].price);
-                    /* console.log(something.data.coins[i].price); */
-                }
-            });
+            return response.json();
         }
+    }).then(function (cryptoInfo) {
+
+        const seanArr = []
+        for (var i = 0; i < cryptoInfo.data.coins.length; i++) {
+            seanArr.push(cryptoInfo.data.coins[i]);
+        }
+        console.log(seanArr);
+        (seanArr).forEach(function (coin) {
+        console.log(coin)
+        })
     });
+
+/* let coinPrice = cryptoInfo.data.coins[i].price;
+let coinIcon = cryptoInfo.data.coins[i].iconUrl;
+let coinRank = cryptoInfo.data.coins[i].rank; */
+
+
+/* grab each coin 0-8 out of the array
+have each coin only show the data of: name, price, iconUrl
+have the coins descend from price
+have the coins append or fill text to each card based on ID */
