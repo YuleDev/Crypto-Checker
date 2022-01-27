@@ -83,17 +83,8 @@ var typedCoinDisplay = function(coinData) {
     // console.log("Liquidity Score: " + coinData.liquidity_score);
     // console.log("Community Score: " + coinData.community_score);
     // console.log(coinData.description.en); 
-    const numb = coinData.market_data.current_price.usd;
+    var numb = coinData.market_data.current_price.usd;
     
-    //adds commas to the current price
-    function separator(numb) {
-        var str = numb.toString().split(".");
-        str[0] = str[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        return str.join(".");
-    };
-    console.log(separator(numb));
-
-
     //create a div to store searched data
     var firstCardEl = document.createElement("div");
     firstCardEl.classList = "card-body";
@@ -135,11 +126,17 @@ var typedCoinDisplay = function(coinData) {
     //adds to the HTML
     descriptionContainerEl.appendChild(descriptionEl);
 
-
+    console.log(separator(numb));
     console.log(firstCardEl);
     console.log(secondCardEl);
 };
 
+//adds commas to the current price
+function separator(numb) {
+    var str = numb.toString().split(".");
+    str[0] = str[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return str.join(".");
+};
 
 
 
