@@ -82,6 +82,7 @@ var typedCoinDisplay = function(coinData) {
     // console.log("Community Score: " + coinData.community_score);
     // console.log(coinData.description.en); 
     var numb = coinData.market_data.current_price.usd;
+    var numby = coinData.developer_data.subscribers;
 
     //create a div to store searched data
     var firstCardEl = document.createElement("div");
@@ -110,23 +111,30 @@ var typedCoinDisplay = function(coinData) {
     communityEl.classList = "card-text";
     communityEl.textContent = "Community Score: " + coinData.community_score;
     firstCardEl.appendChild(communityEl);
+    //get the coinGecko ranking
+    var geckoScoreEl = document.createElement("h6");
+    geckoScoreEl.classList = "card-text";
+    geckoScoreEl.textContent = "Coin Gecko Score: " + coinData.coingecko_score;
+    firstCardEl.appendChild(geckoScoreEl);
+    //coinGecko Rank
+    var geckoRankEl = document.createElement("h6");
+    geckoRankEl.classList = "card-text";
+    geckoRankEl.textContent = "Coin Gecko Rank: #" + coinData.coingecko_rank;
+    firstCardEl.appendChild(geckoRankEl);
+    //subscribers
+    var subscribersEl = document.createElement("h6");
+    subscribersEl.classList = "card-text";
+    subscribersEl.textContent = "Number of Subscribers: " + separator(numby);
+    firstCardEl.appendChild(subscribersEl);
+
     //adds this to the HTML
     typedContainerEl.appendChild(firstCardEl);
 
-    //create a div to store the description
-    // var secondCardEl = document.createElement("div");
-    // secondCardEl.classList = "card-body";
-    // //main description of the coin
-    // var descriptionEl = document.createElement("p");
-    // descriptionEl.classList = "card-text";
-    // descriptionEl.textContent = coinData.description.en;
-    // secondCardEl.appendChild(descriptionEl);
-    // //adds to the HTML
-    // descriptionContainerEl.appendChild(descriptionEl);
+    
 
     console.log(separator(numb));
     console.log(firstCardEl);
-    // console.log(secondCardEl);
+    
 };
 
 //adds commas to the current price
