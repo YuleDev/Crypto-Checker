@@ -2,25 +2,37 @@ body {
     margin: 1rem;
 }
 
+.navbar {
+    padding: 0 10px 0 10px;
+}
+
 main {
     margin-top: 1rem;
 }
 
 .ad-image {
-    width: 100%;
-    padding-top: 1rem;
+    width: 80%;
+    height: auto;
+    padding: 1rem;
+}
 
+h4 {
+    text-align: center;
 }
 
 .card {
     margin: 0.5rem;
 }
 
-/* very important css as some symbols are HUGE */
-.fitImage {
-    max-width: 2rem;
-    max-height: 2rem;
-}
+
+
+
+
+
+
+
+
+
 
 
 
