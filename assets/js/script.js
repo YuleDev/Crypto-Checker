@@ -1,4 +1,3 @@
-
 var coinFormEl = document.querySelector("#coin-form");
 var coinInputEl = document.querySelector("#coin-name");
 var typedContainerEl = document.querySelector("#typed-container");
@@ -132,8 +131,6 @@ var buttonClickHandler = function (event) {
     }
 };
 
-
-
 //display the fetched data to the HTML
 var typedCoinDisplay = function (coinData) {
     var numb = coinData.market_data.current_price.usd;
@@ -186,6 +183,7 @@ var typedCoinDisplay = function (coinData) {
     typedContainerEl.appendChild(firstCardEl);
 };
 
+//kole fetch request for main data
 var getMainIndex = function () {
 
     var apiUrl = "https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers=1&orderBy=price&orderDirection=desc&limit=8&offset=0";
@@ -207,7 +205,6 @@ var getMainIndex = function () {
         });
 };
 
-
 //adds commas to the current price
 function separator(numb) {
     var str = numb.toString().split(".");
@@ -215,6 +212,7 @@ function separator(numb) {
     return str.join(".");
 };
 
+//kole main display function and for loop
 var displayMainIndex = function (data) {
     
     for (var i = 0; i < data.length; i++) {
@@ -235,6 +233,7 @@ var displayMainIndex = function (data) {
     }
 };
 
+//Kole main display call
 getMainIndex();
 
 //the call to load from local storage
@@ -247,6 +246,3 @@ coinFormEl.addEventListener("submit", formSubmitHandler);
 
 //listen to see if a city history button has been clicked
 savedCoinsContainerEl.addEventListener("click", buttonClickHandler);
-
-
-
