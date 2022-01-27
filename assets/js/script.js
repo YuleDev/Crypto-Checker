@@ -25,13 +25,34 @@ var savedCoinsContainerEl = document.querySelector("#saved-coins-container");
 
 var tasks = [];
 
+//saves the tasks variable to the local storage
+var saveTasks = function () {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+};
+
+//gets items from local storage
+var loadTasks = function () {
+    tasks = JSON.parse(localStorage.getItem("tasks"));
+    // console.log(tasks);
+
+    //local storage is empty this creates an empty array
+    if (!tasks) {
+        tasks = [];
+    }
+    //grabs each item in the array and sends it to my button maker
+    for (var i = 0; i < tasks.length; i++) {
+        displaySavedCoinButton(tasks[i]);
+    }
+};
+
 //takes the typed in info
 var formSubmitHandler = function(event) {
     // prevent page from refreshing
     event.preventDefault();
 
     // get value from input element
-    var coinName = coinInputEl.value.trim();
+    var coinTyped = coinInputEl.value.trim();
+    var coinName = coinTyped.toLowerCase();
     // console.log(coinName);
 
     if (coinName) {
@@ -60,8 +81,41 @@ var getTypedCoinData = function(coin) {
             // request was successful
             if (response.ok) {
                 response.json().then(function(data) {
+                    // console.log(data.id);
+                    for (var i = 0; i < tasks.length; i++) {
+                        if (data.id === tasks[i]) {
+                            console.log(coin);
+                            getFeaturedCoinData(coin);
+                            return;
+                        }
+                    }
+                    
                     typedCoinDisplay(data);
-                    displaySavedCoinButton(data.name);
+                    displaySavedCoinButton(data.id);
+                    tasks.push(data.id);
+                    saveTasks();
+                });
+            } else {
+                alert("Please enter a valid Crypto Currency." + response.statusText);
+            }
+        })
+        .catch(function(error) {
+            alert("Unable to connect to CoinGecko");
+        });
+};
+
+var getFeaturedCoinData = function(coin) {
+    // console.log(coin);
+    var apiUrl = "https://api.coingecko.com/api/v3/coins/" + coin;
+    // console.log(apiUrl);
+    // make a get request to url
+    fetch(apiUrl)
+        .then(function(response) {
+            // console.log(response);
+            // request was successful
+            if (response.ok) {
+                response.json().then(function(data) {
+                    typedCoinDisplay(data);
                 });
             } else {
                 alert("Please enter a valid Crypto Currency." + response.statusText);
@@ -74,7 +128,7 @@ var getTypedCoinData = function(coin) {
 
 //displays the saved coin button
 var displaySavedCoinButton = function(coin){
-    console.log(coin);
+    // console.log(coin);
     //creates the coin button
     var coinEl = document.createElement("button");
     coinEl.setAttribute("data-coin", coin);
@@ -84,6 +138,21 @@ var displaySavedCoinButton = function(coin){
     //add the button to the HTML
     savedCoinsContainerEl.appendChild(coinEl);
 };
+
+//when you click a saved button
+var buttonClickHandler = function (event) {
+    // get the coin attribute from the clicked element
+    var coin = event.target.getAttribute("data-coin");
+    // console.log(coin);
+
+    if (coin) {
+        getFeaturedCoinData(coin);
+
+        // clear old content
+        typedContainerEl.textContent = "";
+    }
+};
+
 
 
 //DISPLAY FETCH FUNC to display the images by recieving fetched data
@@ -147,8 +216,8 @@ var typedCoinDisplay = function(coinData) {
 
     
 
-    console.log(separator(numb));
-    console.log(firstCardEl);
+    // console.log(separator(numb));
+    // console.log(firstCardEl);
     
 };
 
@@ -159,11 +228,14 @@ function separator(numb) {
     return str.join(".");
 };
 
-var number = 36763.28022490608;
-console.log(number);
-var newNumber = Math.floor(number);
-console.log(newNumber);
-console.log(separator(newNumber));
+
+
+// Math.Floor Test
+// var number = 36763.28022490608;
+// console.log(number);
+// var newNumber = Math.floor(number);
+// console.log(newNumber);
+// console.log(separator(newNumber));
 
 
 
@@ -178,4 +250,4 @@ console.log(separator(newNumber));
 coinFormEl.addEventListener("submit", formSubmitHandler);
 
 //listen to see if a city history button has been clicked
-// savedCoinsContainerEl.addEventListener("click", buttonClickHandler);
+savedCoinsContainerEl.addEventListener("click", buttonClickHandler);
