@@ -239,8 +239,6 @@ getMainIndex();
 //the call to load from local storage
 loadTasks();
 
-getMainIndex();
-
 //listens to see what coin was typed in
 coinFormEl.addEventListener("submit", formSubmitHandler);
 
