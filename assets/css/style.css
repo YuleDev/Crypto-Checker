@@ -1,8 +1,9 @@
 body {
+    font-family: 'Rajdhani', sans-serif;
     margin: 1rem;
 }
 
-.nav-wrapper {
+.nav-bar {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -12,14 +13,19 @@ body {
 .title {
     display: flex;
     padding-left: 10px;
+    color: white;
 }
 
-.search-form {
-    display: flex;
+.nav-wrapper {
     margin-left: auto;
 }
 
+#coin-name {
+    border: none;
+}
+
 h1 {
+    font-family: 'Rajdhani', sans-serif;
     margin: 0;
     font-size: 3rem;
 }
@@ -36,7 +42,7 @@ form {
     background-size: cover;
     background-position: center;
     display: flex;
-    height: 20vw;
+    height: 25rem;
     position: relative;
 
 }
@@ -57,34 +63,38 @@ header {
     margin: 30px 0 30px 0;
 }
 
-h4 {
+h2, h4 {
     text-align: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: bolder;
 }
 
 .card {
     margin: 0.5rem;
-    border: none;
+    border: 2px solid #011627;
 }
 
 .card-divider {
     background-color: #002855;
     color: white;
+    font-family: 'Rajdhani', sans-serif;
 }
 
-/* .card-section {
-    background-color: #013a63;
-    color: white;
-} */
-/* 
-.btn {
-    background-color:transparent;
-    border: none;
-    color: transparent;
-    text-decoration: none;
-    font-size: 16px;
-    cursor: pointer;
-    outline: 0;
-} */
+.card-section {
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.fitImage {
+    width: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p {
+    color: #011627;
+    font-size: 2rem;
+}
 
 .saved-coins {
     padding: 20px 0 20px 0;
@@ -96,6 +106,7 @@ h4 {
 
 .btn {
     background-color: #014f86;
+    margin-right: 5px;
 }
 
 #clear-button {
@@ -105,10 +116,16 @@ h4 {
 #typed-container {
     background-color: #002855;
     color: white;
+    border: none;
+}
+
+.card-text {
+    font-family: 'Rajdhani', sans-serif;
 }
 
 h5 {
     font-weight: bolder;
+    font-family: 'Rajdhani', sans-serif;
 }
 
 footer {
@@ -119,20 +136,19 @@ footer {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     padding-left: 10px;
 
 }
 
 .git-link {
-    display: flex;
-    padding: 20px;
-    margin-left: auto;
+    padding-left: 30px;
 }
 
-.github-icon {
-    height: 10%
+.git-img {
+    background-color: white;
+    width: 150%;
 }
-
 
 
 
@@ -140,6 +156,24 @@ footer {
 
 @media only screen and (max-width: 320px) {
     /* For mobiles: CSS */
+    .nav-bar {
+        width: 100%;
+    }
+    .title {
+        padding-left: 15%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .search-form {
+        margin-left: 20%;
+    }
+
+    .hero {
+        height: 10rem;
+    }
 }
 
 @media only screen and (min-width: 600px) {

@@ -2,6 +2,7 @@ var coinFormEl = document.querySelector("#coin-form");
 var coinInputEl = document.querySelector("#coin-name");
 var typedContainerEl = document.querySelector("#typed-container");
 var savedCoinsContainerEl = document.querySelector("#saved-coins-container");
+var clearButtonEl = document.querySelector("#clear-button");
 var tasks = [];
 
 //saves the tasks variable to the local storage
@@ -233,6 +234,13 @@ var displayMainIndex = function (data) {
     }
 };
 
+var clearAllCoins = function(event){
+    console.log("hey there buddy");
+    savedCoinsContainerEl.textContent = "";
+    tasks = [];
+    saveTasks();
+};
+
 //Kole main display call
 getMainIndex();
 
@@ -244,3 +252,6 @@ coinFormEl.addEventListener("submit", formSubmitHandler);
 
 //listen to see if a city history button has been clicked
 savedCoinsContainerEl.addEventListener("click", buttonClickHandler);
+
+//listen to see if the clear button is clicked
+clearButtonEl.addEventListener("click", clearAllCoins);
