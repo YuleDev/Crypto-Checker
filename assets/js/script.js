@@ -259,10 +259,13 @@ savedCoinsContainerEl.addEventListener("click", buttonClickHandler);
 clearButtonEl.addEventListener("click", clearAllCoins);
 
 //modal test
-document.addEventListener('click', function () {
+
+//         $(document).ready(function(){
+//     $('.modal').modal();
+// });
+document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.modal');
-    console.log(elems);
-    var instances = M.Modal.init(elems, options);
-    consolelog(instances);
+    var instances = M.Modal.init(elems);
 });
+
 
