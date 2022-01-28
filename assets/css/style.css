@@ -1,0 +1,186 @@
+body {
+    font-family: 'Rajdhani', sans-serif;
+    margin: 1rem;
+}
+
+.nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: #011627;
+}
+
+.title {
+    display: flex;
+    padding-left: 10px;
+    color: white;
+}
+
+.nav-wrapper {
+    margin-left: auto;
+}
+
+#coin-name {
+    border: none;
+}
+
+h1 {
+    font-family: 'Rajdhani', sans-serif;
+    margin: 0;
+    font-size: 3rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-end;
+}
+
+.hero {
+    background-image: url("../images/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    height: 25rem;
+    position: relative;
+
+}
+
+main {
+    margin-top: 1rem;
+}
+
+.trending-crypto {
+    border-bottom: 2px solid #011627;
+    padding-bottom: 30px;
+
+}
+
+header {
+    text-align: center;
+    border-bottom: 2px solid #011627;
+    margin: 30px 0 30px 0;
+}
+
+h2, h4 {
+    text-align: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: bolder;
+}
+
+.card {
+    margin: 0.5rem;
+    border: 2px solid #011627;
+}
+
+.card-divider {
+    background-color: #002855;
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.card-section {
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.fitImage {
+    width: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p {
+    color: #011627;
+    font-size: 2rem;
+}
+
+.saved-coins {
+    padding: 20px 0 20px 0;
+}
+
+.saved {
+    border: 2px solid #011627;
+}
+
+.btn {
+    background-color: #014f86;
+    margin: 5px 5px 0 0;
+}
+
+.clear-all-button {
+    text-align: center;
+}
+
+#typed-container {
+    background-color: #002855;
+    color: white;
+    border: none;
+}
+
+.card-text {
+    font-family: 'Rajdhani', sans-serif;
+}
+
+h5 {
+    font-weight: bolder;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+footer {
+    height: 7rem;
+    width: 100%;
+    background-color: #011627;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+
+}
+
+.git-link {
+    padding-left: 30px;
+}
+
+.git-img {
+    background-color: white;
+    width: 150%;
+}
+
+
+
+
+
+@media only screen and (max-width: 320px) {
+    /* For mobiles: CSS */
+    .nav-bar {
+        width: 100%;
+    }
+    .title {
+        padding-left: 15%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .search-form {
+        margin-left: 20%;
+    }
+
+    .hero {
+        height: 10rem;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: CSS */
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: CSS */
+}
+
