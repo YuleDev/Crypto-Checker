@@ -106,7 +106,7 @@ p {
 
 .btn {
     background-color: #014f86;
-    margin-right: 5px;
+    margin: 5px 5px 0 0;
 }
 
 #clear-button {
