@@ -110,22 +110,21 @@ var getFeaturedCoinData = function (coin) {
 
 //modals to show both kinds of errors.
 var invalidEntry = function (coin) {
-    // console.log('Please enter a valid coin. Did you seriously think "' + coin + '" was correct???????');
-        var elems = document.querySelector('#terms');
-        console.log(elems);
-        var grumpy = document.querySelector('#grumpy-text');
-        grumpy.innerHTML = 'Please enter a valid coin. Did you seriously think "' + coin + '" was correct???????';
-        console.log(grumpy);
-        var instance = M.Modal.init(elems);
-        // console.log(instance);
-        instance.open();
+    var elems = document.querySelector('#terms');
+    console.log(elems);
+    var grumpy = document.querySelector('#grumpy-text');
+    grumpy.innerHTML = 'Please enter a valid coin. Did you seriously think "' + coin + '" was correct???????';
+    console.log(grumpy);
+    var instance = M.Modal.init(elems);
+    // console.log(instance);
+    instance.open();
 };
 
-var connectionErr = function() {
+var connectionErr = function () {
     console.log("Connection error");
-        var elems = document.querySelector('#connection');
-        var instance = M.Modal.init(elems);
-        instance.open();
+    var elems = document.querySelector('#connection');
+    var instance = M.Modal.init(elems);
+    instance.open();
 };
 
 //displays the saved coin button
