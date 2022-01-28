@@ -43,7 +43,9 @@ var formSubmitHandler = function (event) {
         typedContainerEl.textContent = "";
         // descriptionContainerEl.textContent = "";
     } else {
-        alert("Please enter a valid Crypto Currency.");
+        // alert("Please enter a valid Crypto Currency.");
+        invalidEntry();
+
     }
 };
 
@@ -75,11 +77,12 @@ var getTypedCoinData = function (coin) {
                     saveTasks();
                 });
             } else {
-                alert("Please enter a valid Crypto Currency." + response.statusText);
+                // alert("Please enter a valid Crypto Currency." + response.statusText);
+                invalidEntry(coin);
             }
         })
         .catch(function (error) {
-            alert("Unable to connect to CoinGecko");
+            connectionErr();
         });
 };
 
@@ -101,7 +104,7 @@ var getFeaturedCoinData = function (coin) {
             }
         })
         .catch(function (error) {
-            alert("Unable to connect to CoinGecko");
+            connectionErr();
         });
 };
 
@@ -237,7 +240,6 @@ var displayMainIndex = function (data) {
 };
 
 var clearAllCoins = function (event) {
-    console.log("hey there buddy");
     savedCoinsContainerEl.textContent = "";
     tasks = [];
     saveTasks();
@@ -260,20 +262,20 @@ clearButtonEl.addEventListener("click", clearAllCoins);
 
 //modal test
 
-// document.addEventListener('DOMContentLoaded', function () {
-//     var elems = document.querySelectorAll('#terms');
-//     var instances = M.Modal.init(elems);
-//     console.log(instances);
-// });
+var invalidEntry = function (coin) {
+    console.log("Please enter a valid coin. Did you seriously think " + coin + " was correct???????");
+        var elems = document.querySelector('#terms');
+        console.log(elems);
+        var instance = M.Modal.init(elems);
+        console.log(instance);
+        instance.open();
+};
 
-document.addEventListener('DOMContentLoaded', function () {
-var elems = document.querySelectorAll('#terms');
-console.log(elems);
-var instances = M.Modal.init(elems);
-console.log(instances);
-var instance = M.Modal.getInstance(elems);
-console.log(instance);
-// instance.open();
-});
+var connectionErr = function() {
+    console.log("Connection error");
+        var elems = document.querySelector('#connection');
+        var instance = M.Modal.init(elems);
+        instance.open();
+}
 
 
