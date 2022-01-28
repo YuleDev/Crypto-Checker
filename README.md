@@ -5,6 +5,9 @@ https://github.com/BullMooseDev/TEAMPROJ1
 https://bullmoosedev.github.io/TEAMPROJ1/
 
 
+Additional documentation potentially needed until completion of project
+
+
 /* Base url for CoinGecko = ('api.coingecko.com/api/v3');
 CoinGecko for searchbar = ('/search')
 found on ('https://www.coingecko.com/api/documentations/v3') and ('https://www.coingecko.com/en/api/documentation');
