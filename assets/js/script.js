@@ -111,12 +111,9 @@ var getFeaturedCoinData = function (coin) {
 //modals to show both kinds of errors.
 var invalidEntry = function (coin) {
     var elems = document.querySelector('#terms');
-    console.log(elems);
     var grumpy = document.querySelector('#grumpy-text');
     grumpy.innerHTML = 'Please enter a valid coin. Did you seriously think "' + coin + '" was correct???????';
-    console.log(grumpy);
     var instance = M.Modal.init(elems);
-    // console.log(instance);
     instance.open();
 };
 
