@@ -139,7 +139,7 @@ var typedCoinDisplay = function (coinData) {
 
     //create a div to store searched data
     var firstCardEl = document.createElement("div");
-    firstCardEl.classList = "z-depth-4 card-body #ff5252 red accent-2";
+    firstCardEl.classList = "card-section";
     //card name and image
     var nameEl = document.createElement("h5");
     nameEl.classList = "card-title";

@@ -6,133 +6,188 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto-Checker!</title>
-    <!-- add google font? -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
     <!-- navigation bar -->
-    <nav>
-        <div class="#d1c4e9 deep-purple lighten-4 lighten-2 nav-wrapper">
-            <a href="#" class="brand-logo left">Crypto-Checker!</a>
-            <ul id="nav-mobile" class="left hide-on-med-and-down"></ul>
-            <form id="coin-form">
-                <div class="right input-field">
-                    <input id="coin-name" type="search" required>
-                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                    <i class="material-icons">close</i>
-                </div>
-            </form>
-        </div>
-    </nav>
-
-    <div id="clear-button">
-        <button class="btn">Clear Saved Coins</button>
-    </div>
-
-    <main class="container-fluid">
-        <div class="row">
-            <!-- fake ad image -->
-            <div class="col s3">
-                <img src="./assets/images/MuskMintGifV2.gif" class="ad-image" alt="placeholder">
-                <h4 class="left row">History</h4>
-                <div id="saved-coins-container" class="card-body">
-                    
-                </div>
+    <navigation>
+        <div class="nav-bar">
+            <div class="title">
+                <h1>Crypto-Checker!</h1>
             </div>
+            <div class="nav-wrapper">
+                <form id="coin-form">
+                    <div class="input-field">
+                        <input id="coin-name" type="search" required>
+                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                        <i class="material-icons">close</i>                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </navigation>
 
+    <!-- hero img -->
+    <section>
+        <div class="hero"></div>
+    </section>
+
+    <main class="grid-container">
+        <div class="trending-crypto grid-x">
             <!-- crypto info cards -->
-
-            <div id="price-track-container" class="col s9">
-                <div class="row">
-                    <div class="col s3">
-                        <div class="z-depth-4 card">
-                            <div class="card-body #ff5252 red accent-2">
+            <div id="price-track-container" class="cell">
+                <!-- header for trending crypto -->
+                <header>
+                    <h2>Top Trending Crypto</h2>
+                </header>
+                <!-- row 1 -->
+                <div class="grid-x">
+                    <div class="cell small-12 medium-6 large-3">
+                        <div class="card">
+                            <div class="card-divider">
                                 <h5 class="card-title" id="name0"></h5>
+                            </div>
+                            <div class="card-section">
+                                <img class="fitImage" id="img0" />   
+                            </div>
+                            <div class="card-section">
                                 <p class="card-text" id="price0"></p>
-                                <img class="fitImage" id="img0" />
                             </div>
                         </div>
                     </div>
-                    <div class="col s3">
-                        <div class="z-depth-4 card">
-                            <div class="card-body #ff5252 red accent-2">
+                    <div class="cell small-12 medium-6 large-3">
+                        <div class="card">
+                            <div class="card-divider">
                                 <h5 class="card-title" id="name1"></h5>
+                            </div>
+                            <div class="card-section">
+                                <img class="fitImage" id="img1" />   
+                            </div>                                   
+                            <div class="card-section">
                                 <p class="card-text" id="price1"></p>
-                                <img class="fitImage" id="img1" />
                             </div>
                         </div>
                     </div>
-                    <div class="col s3">
-                        <div class="z-depth-4 card">
-                            <div class="card-body #ff5252 red accent-2">
+                    <div class="cell small-12 medium-6 large-3">
+                        <div class="card">
+                            <div class="card-divider">
                                 <h5 class="card-title" id="name2"></h5>
+                            </div>
+                            <div class="card-section">
+                                <img class="fitImage" id="img2" />   
+                            </div>                               
+                            <div class="card-section">
                                 <p class="card-text" id="price2"></p>
-                                <img class="fitImage" id="img2" />
                             </div>
                         </div>
                     </div>
-                    <div class="col s3">
-                        <div class="z-depth-4 card">
-                            <div class="card-body #ff5252 red accent-2">
+                    <div class="cell small-12 medium-6 large-3">
+                        <div class="card">
+                            <div class="card-divider">
                                 <h5 class="card-title" id="name3"></h5>
+                            </div>
+                            <div class="card-section">
+                                <img class="fitImage" id="img3" />   
+                            </div>                                    
+                            <div class="card-section">
                                 <p class="card-text" id="price3"></p>
-                                <img class="fitImage" id="img3" />
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- row 2 -->
-                <div class="row">
-                    <div class="col s3">
-                        <div class="z-depth-4 card">
-                            <div class="card-body #ff5252 red accent-2">
+                <div class="grid-x">
+                    <div class="cell small-12 medium-6 large-3">
+                        <div class="card">
+                            <div class="card-divider">
                                 <h5 class="card-title" id="name4"></h5>
+                            </div>
+                            <div class="card-section">
+                                <img class="fitImage" id="img4" />   
+                            </div>                                    
+                            <div class="card-section">
                                 <p class="card-text" id="price4"></p>
-                                <img class="fitImage" id="img4">
                             </div>
                         </div>
                     </div>
-                    <div class="col s3">
-                        <div class="z-depth-4 card">
-                            <div class="card-body #ff5252 red accent-2">
+                    <div class="cell small-12 medium-6 large-3">
+                        <div class="card">
+                            <div class="card-divider">
                                 <h5 class="card-title" id="name5"></h5>
+                            </div>
+                            <div class="card-section">
+                                <img class="fitImage" id="img5" />   
+                            </div>                                   
+                            <div class="card-section">
                                 <p class="card-text" id="price5"></p>
-                                <img class="fitImage" id="img5">
                             </div>
                         </div>
                     </div>
-                    <div class="col s3">
-                        <div class="z-depth-4 card">
-                            <div class="card-body #ff5252 red accent-2">
+                    <div class="cell small-12 medium-6 large-3">
+                        <div class="card">
+                            <div class="card-divider">
                                 <h5 class="card-title" id="name6"></h5>
+                            </div>
+                            <div class="card-section">
+                                <img class="fitImage" id="img6" />   
+                            </div>                            <div class="card-section">
                                 <p class="card-text" id="price6"></p>
-                                <img class="fitImage" id="img6">
+                                    
                             </div>
                         </div>
                     </div>
-                    <div class="col s3">
-                        <div class="z-depth-4 card">
-                            <div class="card-body #ff5252 red accent-2">
+                    <div class="cell small-12 medium-6 large-3">
+                        <div class="card">
+                            <div class="card-divider">
                                 <h5 class="card-title" id="name7"></h5>
-                                <p class="card-text" id="price7"></p>
-                                <img class="fitImage" id="img7">
                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s12">
-                            <div id="typed-container" class="card">
-
+                            <div class="card-section">
+                                <img class="fitImage" id="img7" />   
+                            </div>                            
+                            <div class="card-section">
+                                <p class="card-text" id="price7"></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="saved-coins grid-x">
+            <!-- saved coins container -->
+            <div class="cell small-12 small-6 medium-4 large-4">
+                <div class="card saved">
+                    <div class="card-divider">
+                        <h4>My Saved Coins</h4>
+                    </div>
+                    <div id="saved-coins-container" class="card-section"></div>
+                </div>
+                <div id="clear-button">
+                    <button class="btn">Clear Saved Coins</button>
+                </div>
+            </div>
+            <!-- searched coins container -->
+            <div class="cell small-12 medium-8 large-8">
+                <div id="typed-container" class="card"></div>
+            </div>
+        </div>
     </main>
+
+    <footer>
+        <div>
+            <h5>&copy;Crypto-Checker! by Kole Ervine, John Clark, Jordan Otterson, and Kelly Lee </h5>
+        </div>
+        <div class="git-link">
+            <a href="https://github.com/BullMooseDev/TEAMPROJ1" target="_blank"><img src="./assets/images/icons8-github-squared-96.png" class="git-img"/></a>
+        </div>
+    </footer>
+    
     <script src="./assets/js/script.js"></script>
 </body>
 
