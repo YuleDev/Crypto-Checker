@@ -14,7 +14,7 @@ var saveTasks = function () {
 //gets items from local storage
 var loadTasks = function () {
     tasks = JSON.parse(localStorage.getItem("tasks"));
-    console.log(tasks);
+    // console.log(tasks);
 
     //local storage is empty this creates an empty array
     if (!tasks) {
@@ -43,7 +43,9 @@ var formSubmitHandler = function (event) {
         typedContainerEl.textContent = "";
         // descriptionContainerEl.textContent = "";
     } else {
-        alert("Please enter a valid Crypto Currency.");
+        // alert("Please enter a valid Crypto Currency.");
+        invalidEntry();
+
     }
 };
 
@@ -75,11 +77,12 @@ var getTypedCoinData = function (coin) {
                     saveTasks();
                 });
             } else {
-                alert("Please enter a valid Crypto Currency." + response.statusText);
+                // alert("Please enter a valid Crypto Currency." + response.statusText);
+                invalidEntry(coin);
             }
         })
         .catch(function (error) {
-            alert("Unable to connect to CoinGecko");
+            connectionErr();
         });
 };
 
@@ -97,12 +100,32 @@ var getFeaturedCoinData = function (coin) {
                     typedCoinDisplay(data);
                 });
             } else {
-                alert("Please enter a valid Crypto Currency." + response.statusText);
+                invalidEntry(coin);
             }
         })
         .catch(function (error) {
-            alert("Unable to connect to CoinGecko");
+            connectionErr();
         });
+};
+
+//modals to show both kinds of errors.
+var invalidEntry = function (coin) {
+    // console.log('Please enter a valid coin. Did you seriously think "' + coin + '" was correct???????');
+        var elems = document.querySelector('#terms');
+        console.log(elems);
+        var grumpy = document.querySelector('#grumpy-text');
+        grumpy.innerHTML = 'Please enter a valid coin. Did you seriously think "' + coin + '" was correct???????';
+        console.log(grumpy);
+        var instance = M.Modal.init(elems);
+        // console.log(instance);
+        instance.open();
+};
+
+var connectionErr = function() {
+    console.log("Connection error");
+        var elems = document.querySelector('#connection');
+        var instance = M.Modal.init(elems);
+        instance.open();
 };
 
 //displays the saved coin button
@@ -216,17 +239,17 @@ function separator(numb) {
 
 //kole main display function and for loop
 var displayMainIndex = function (data) {
-    
+
     for (var i = 0; i < data.length; i++) {
-        
+
         var forName = "#name" + [i];
         var nameElement = document.querySelector(forName);
         nameElement.textContent = i + 1 + ". " + data[i].name;
-        
+
         var forPrice = "#price" + [i];
         var priceElement = document.querySelector(forPrice);
         priceElement.textContent = data[i].price;
-        
+
         var forIcon = "#img" + [i];
         var imgElement = document.querySelector(forIcon);
         imgElement.setAttribute("src", data[i].iconUrl);
@@ -236,8 +259,7 @@ var displayMainIndex = function (data) {
     }
 };
 
-var clearAllCoins = function(event){
-    console.log("hey there buddy");
+var clearAllCoins = function (event) {
     savedCoinsContainerEl.textContent = "";
     tasks = [];
     saveTasks();
@@ -257,4 +279,9 @@ savedCoinsContainerEl.addEventListener("click", buttonClickHandler);
 
 //listen to see if the clear button is clicked
 clearButtonEl.addEventListener("click", clearAllCoins);
+
+
+
+
+
 
