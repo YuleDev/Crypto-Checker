@@ -100,12 +100,32 @@ var getFeaturedCoinData = function (coin) {
                     typedCoinDisplay(data);
                 });
             } else {
-                alert("Please enter a valid Crypto Currency." + response.statusText);
+                invalidEntry(coin);
             }
         })
         .catch(function (error) {
             connectionErr();
         });
+};
+
+//modals to show both kinds of errors.
+var invalidEntry = function (coin) {
+    // console.log('Please enter a valid coin. Did you seriously think "' + coin + '" was correct???????');
+        var elems = document.querySelector('#terms');
+        console.log(elems);
+        var grumpy = document.querySelector('#grumpy-text');
+        grumpy.innerHTML = 'Please enter a valid coin. Did you seriously think "' + coin + '" was correct???????';
+        console.log(grumpy);
+        var instance = M.Modal.init(elems);
+        // console.log(instance);
+        instance.open();
+};
+
+var connectionErr = function() {
+    console.log("Connection error");
+        var elems = document.querySelector('#connection');
+        var instance = M.Modal.init(elems);
+        instance.open();
 };
 
 //displays the saved coin button
@@ -260,22 +280,8 @@ savedCoinsContainerEl.addEventListener("click", buttonClickHandler);
 //listen to see if the clear button is clicked
 clearButtonEl.addEventListener("click", clearAllCoins);
 
-//modal test
 
-var invalidEntry = function (coin) {
-    console.log("Please enter a valid coin. Did you seriously think " + coin + " was correct???????");
-        var elems = document.querySelector('#terms');
-        console.log(elems);
-        var instance = M.Modal.init(elems);
-        console.log(instance);
-        instance.open();
-};
 
-var connectionErr = function() {
-    console.log("Connection error");
-        var elems = document.querySelector('#connection');
-        var instance = M.Modal.init(elems);
-        instance.open();
-}
+
 
 
