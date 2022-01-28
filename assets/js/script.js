@@ -216,17 +216,17 @@ function separator(numb) {
 
 //kole main display function and for loop
 var displayMainIndex = function (data) {
-    
+
     for (var i = 0; i < data.length; i++) {
-        
+
         var forName = "#name" + [i];
         var nameElement = document.querySelector(forName);
         nameElement.textContent = i + 1 + ". " + data[i].name;
-        
+
         var forPrice = "#price" + [i];
         var priceElement = document.querySelector(forPrice);
         priceElement.textContent = data[i].price;
-        
+
         var forIcon = "#img" + [i];
         var imgElement = document.querySelector(forIcon);
         imgElement.setAttribute("src", data[i].iconUrl);
@@ -236,7 +236,7 @@ var displayMainIndex = function (data) {
     }
 };
 
-var clearAllCoins = function(event){
+var clearAllCoins = function (event) {
     console.log("hey there buddy");
     savedCoinsContainerEl.textContent = "";
     tasks = [];
@@ -257,4 +257,12 @@ savedCoinsContainerEl.addEventListener("click", buttonClickHandler);
 
 //listen to see if the clear button is clicked
 clearButtonEl.addEventListener("click", clearAllCoins);
+
+//modal test
+document.addEventListener('click', function () {
+    var elems = document.querySelectorAll('.modal');
+    console.log(elems);
+    var instances = M.Modal.init(elems, options);
+    consolelog(instances);
+});
 

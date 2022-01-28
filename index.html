@@ -10,7 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -26,7 +27,7 @@
                     <div class="input-field">
                         <input id="coin-name" type="search" required>
                         <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                        <i class="material-icons">close</i>                        
+                        <i class="material-icons">close</i>
                     </div>
                 </form>
             </div>
@@ -54,10 +55,10 @@
                                 <h5 class="card-title" id="name0"></h5>
                             </div>
                             <div class="card-section">
-                                <img class="fitImage" id="img0" />   
+                                <img class="fitImage" id="img0" />
                             </div>
                             <div class="card-section">
-                                <p >$<span class="card-text" id="price0"></span></p>
+                                <p>$<span class="card-text" id="price0"></span></p>
                             </div>
                         </div>
                     </div>
@@ -67,10 +68,10 @@
                                 <h5 class="card-title" id="name1"></h5>
                             </div>
                             <div class="card-section">
-                                <img class="fitImage" id="img1" />   
-                            </div>                                   
+                                <img class="fitImage" id="img1" />
+                            </div>
                             <div class="card-section">
-                                <p >$<span class="card-text" id="price1"></span></p>
+                                <p>$<span class="card-text" id="price1"></span></p>
                             </div>
                         </div>
                     </div>
@@ -80,10 +81,10 @@
                                 <h5 class="card-title" id="name2"></h5>
                             </div>
                             <div class="card-section">
-                                <img class="fitImage" id="img2" />   
-                            </div>                               
+                                <img class="fitImage" id="img2" />
+                            </div>
                             <div class="card-section">
-                                <p >$<span class="card-text" id="price2"></span></p>
+                                <p>$<span class="card-text" id="price2"></span></p>
                             </div>
                         </div>
                     </div>
@@ -93,10 +94,10 @@
                                 <h5 class="card-title" id="name3"></h5>
                             </div>
                             <div class="card-section">
-                                <img class="fitImage" id="img3" />   
-                            </div>                                    
+                                <img class="fitImage" id="img3" />
+                            </div>
                             <div class="card-section">
-                                <p >$<span class="card-text" id="price3"></span></p>
+                                <p>$<span class="card-text" id="price3"></span></p>
                             </div>
                         </div>
                     </div>
@@ -109,10 +110,10 @@
                                 <h5 class="card-title" id="name4"></h5>
                             </div>
                             <div class="card-section">
-                                <img class="fitImage" id="img4" />   
-                            </div>                                    
+                                <img class="fitImage" id="img4" />
+                            </div>
                             <div class="card-section">
-                                <p >$<span class="card-text" id="price4"></span></p>
+                                <p>$<span class="card-text" id="price4"></span></p>
                             </div>
                         </div>
                     </div>
@@ -122,10 +123,10 @@
                                 <h5 class="card-title" id="name5"></h5>
                             </div>
                             <div class="card-section">
-                                <img class="fitImage" id="img5" />   
-                            </div>                                   
+                                <img class="fitImage" id="img5" />
+                            </div>
                             <div class="card-section">
-                                <p >$<span class="card-text" id="price5"></span></p>
+                                <p>$<span class="card-text" id="price5"></span></p>
                             </div>
                         </div>
                     </div>
@@ -135,10 +136,11 @@
                                 <h5 class="card-title" id="name6"></h5>
                             </div>
                             <div class="card-section">
-                                <img class="fitImage" id="img6" />   
-                            </div>                            <div class="card-section">
-                                <p >$<span class="card-text" id="price6"></span></p>
-                                    
+                                <img class="fitImage" id="img6" />
+                            </div>
+                            <div class="card-section">
+                                <p>$<span class="card-text" id="price6"></span></p>
+
                             </div>
                         </div>
                     </div>
@@ -148,10 +150,10 @@
                                 <h5 class="card-title" id="name7"></h5>
                             </div>
                             <div class="card-section">
-                                <img class="fitImage" id="img7" />   
-                            </div>                            
+                                <img class="fitImage" id="img7" />
+                            </div>
                             <div class="card-section">
-                                <p >$<span class="card-text" id="price7"></span></p>
+                                <p>$<span class="card-text" id="price7"></span></p>
                             </div>
                         </div>
                     </div>
@@ -168,7 +170,7 @@
                     </div>
                     <div id="saved-coins-container" class="card-section"></div>
                 </div>
-                <div class = "clear-all-button">
+                <div class="clear-all-button">
                     <button id="clear-button" class="btn">Clear Saved Coins</button>
                 </div>
             </div>
@@ -179,15 +181,31 @@
         </div>
     </main>
 
+    <!--Modal Test-->
+    <!-- Modal Trigger -->
+    <button data-target="modal1" class="btn modal-trigger">Modal</button>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Modal Header</h4>
+            <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+    </div>
+
     <footer>
         <div>
             <h5>&copy;Crypto-Checker! by Kole Ervine, John Clark, Jordan Otterson, and Kelly Lee </h5>
         </div>
         <div class="git-link">
-            <a href="https://github.com/BullMooseDev/TEAMPROJ1" target="_blank"><img src="./assets/images/icons8-github-squared-96.png" class="git-img"/></a>
+            <a href="https://github.com/BullMooseDev/TEAMPROJ1" target="_blank"><img
+                    src="./assets/images/icons8-github-squared-96.png" class="git-img" /></a>
         </div>
     </footer>
-    
+
     <script src="./assets/js/script.js"></script>
 </body>
 
