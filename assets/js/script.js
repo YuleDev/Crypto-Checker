@@ -14,7 +14,7 @@ var saveTasks = function () {
 //gets items from local storage
 var loadTasks = function () {
     tasks = JSON.parse(localStorage.getItem("tasks"));
-    console.log(tasks);
+    // console.log(tasks);
 
     //local storage is empty this creates an empty array
     if (!tasks) {
@@ -260,12 +260,20 @@ clearButtonEl.addEventListener("click", clearAllCoins);
 
 //modal test
 
-//         $(document).ready(function(){
-//     $('.modal').modal();
+// document.addEventListener('DOMContentLoaded', function () {
+//     var elems = document.querySelectorAll('#terms');
+//     var instances = M.Modal.init(elems);
+//     console.log(instances);
 // });
+
 document.addEventListener('DOMContentLoaded', function () {
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems);
+var elems = document.querySelectorAll('#terms');
+console.log(elems);
+var instances = M.Modal.init(elems);
+console.log(instances);
+var instance = M.Modal.getInstance(elems);
+console.log(instance);
+// instance.open();
 });
 
 
