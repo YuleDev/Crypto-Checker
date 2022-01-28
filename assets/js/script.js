@@ -112,7 +112,7 @@ var getFeaturedCoinData = function (coin) {
 var invalidEntry = function (coin) {
     var elems = document.querySelector('#terms');
     var grumpy = document.querySelector('#grumpy-text');
-    grumpy.innerHTML = 'Please enter a valid coin. Did you seriously think "' + coin + '" was correct???????';
+    grumpy.innerHTML = 'You FUCKING FUCK!!!! Did you seriously think "' + coin + '" was correct???????  Do better!';
     var instance = M.Modal.init(elems);
     instance.open();
 };
