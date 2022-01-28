@@ -217,9 +217,10 @@ function separator(numb) {
 var displayMainIndex = function (data) {
     
     for (var i = 0; i < data.length; i++) {
+        
         var forName = "#name" + [i];
         var nameElement = document.querySelector(forName);
-        nameElement.textContent = data[i].name;
+        nameElement.textContent = i + 1 + ". " + data[i].name;
         
         var forPrice = "#price" + [i];
         var priceElement = document.querySelector(forPrice);
