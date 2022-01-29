@@ -8,6 +8,8 @@ body {
     flex-wrap: wrap;
     width: 100%;
     background-color: #011627;
+    overflow: hidden;
+    z-index: 9001;
 }
 
 .title {
@@ -42,7 +44,7 @@ form {
     background-size: cover;
     background-position: center;
     display: flex;
-    height: 25rem;
+    height: 20rem;
     position: relative;
 
 }
@@ -150,6 +152,13 @@ footer {
     width: 150%;
 }
 
+/* attemtping to create a sticky navbar */
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
 
 
 
