@@ -21,16 +21,15 @@
         <div class="nav-bar" id="nav-bar">
             <div class="title">
                 <h1>Crypto-Checker!</h1>
-            </div>
-            <div class="nav-wrapper">
+            </div>       
+            <div class="search-form">
                 <form id="coin-form">
-                    <div class="input-field">
-                        <input id="coin-name" type="search" required>
-                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                        <i class="material-icons">close</i>
-                    </div>
+                    <ul class="menu">
+                        <li><i class="material-icons">search</i></li>     
+                        <li><input id="coin-name" type="text" placeholder="Search for Crypto"></li>
+                        <li><button type="submit" class="button search-btn">Search</button></li>
                 </form>
-            </div>
+            </div>       
         </div>
     </navigation>
 
@@ -171,7 +170,7 @@
                     <div id="saved-coins-container" class="card-section"></div>
                 </div>
                 <div class="clear-all-button">
-                    <button id="clear-button" class="btn">Clear Saved Coins</button>
+                    <button id="clear-button" class="button">Clear Saved Coins</button>
                 </div>
             </div>
             <!-- searched coins container -->
