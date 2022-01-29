@@ -223,8 +223,10 @@ var getMainIndex = function () {
             }
         }).then(function (cryptoInfo) {
             displayMainIndex(cryptoInfo.data.coins);
+            console.log(cryptoInfo);
         });
 };
+
 
 //adds commas to the current price
 function separator(numb) {
