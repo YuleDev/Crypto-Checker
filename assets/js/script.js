@@ -112,7 +112,7 @@ var getFeaturedCoinData = function (coin) {
 var invalidEntry = function (coin) {
     var elems = document.querySelector('#terms');
     var grumpy = document.querySelector('#grumpy-text');
-    grumpy.innerHTML = 'You FUCKING FUCK!!!! Did you seriously think "' + coin + '" was correct???????  Do better!';
+    grumpy.innerHTML = 'Unfortunately "' + coin + '" doesnt exist. Please check your spelling and try again!';
     var instance = M.Modal.init(elems);
     instance.open();
 };
