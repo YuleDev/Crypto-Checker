@@ -1,6 +1,6 @@
 body {
     font-family: 'Rajdhani', sans-serif;
-    margin: 1rem;
+    /* margin: 1rem; commenting this out fixed the weird overlap problem there was previously */
 }
 
 .nav-bar {
@@ -46,7 +46,6 @@ form {
     display: flex;
     height: 20rem;
     position: relative;
-
 }
 
 main {
