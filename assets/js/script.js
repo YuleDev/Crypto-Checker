@@ -282,7 +282,7 @@ clearButtonEl.addEventListener("click", clearAllCoins);
 
 
 // attempting to add sticky navbar to our project page
-window.onscroll = function() {navbarfunction()};
+window.onscroll = function () { navbarfunction() };
 
 // Get the navbar
 var navbar = document.getElementById("nav-bar");
@@ -292,11 +292,11 @@ var sticky = navbar.offsetTop;
 
 // Add the sticky class to navbar when you scroll. Remove "sticky" when you leave the scroll position
 function navbarfunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
+    if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+    } else {
+        navbar.classList.remove("sticky");
+    }
 };
 
 

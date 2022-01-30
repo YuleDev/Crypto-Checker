@@ -3,6 +3,7 @@ body {
     /* margin: 1rem; commenting this out fixed the weird overlap problem there was previously */
 }
 
+
 .nav-bar {
     display: flex;
     flex-wrap: wrap;
