@@ -10,32 +10,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css"
+    crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
     <!-- navigation bar -->
     <navigation>
-        <div class="nav-bar">
+        <div class="nav-bar" id="nav-bar">
             <div class="title">
                 <h1>Crypto-Checker!</h1>
-            </div>
-            <div class="nav-wrapper">
+            </div>       
+            <div class="search-form">
                 <form id="coin-form">
-                    <div class="input-field">
-                        <input id="coin-name" type="search" required>
-                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                        <i class="material-icons">close</i>                        
-                    </div>
+                    <ul class="menu">
+                        <li><i class="material-icons">search</i></li>     
+                        <li><input id="coin-name" type="text" placeholder="Search for Crypto"></li>
+                        <li><button type="submit" class="button search-btn">Search</button></li>
                 </form>
-            </div>
+            </div>       
         </div>
     </navigation>
 
     <!-- hero img -->
     <section>
-        <div class="hero"></div>
+        <div class="hero" alt="image of a digital financial tracker"></div>
     </section>
 
     <main class="grid-container">
@@ -54,10 +54,10 @@
                                 <h5 class="card-title" id="name0"></h5>
                             </div>
                             <div class="card-section">
-                                <img class="fitImage" id="img0" />   
+                                <img class="fitImage" id="img0" alt="first highest valued cryptocurrency icon" />
                             </div>
                             <div class="card-section">
-                                <p >$<span class="card-text" id="price0"></span></p>
+                                <p>$<span class="card-text" id="price0"></span></p>
                             </div>
                         </div>
                     </div>
@@ -67,10 +67,10 @@
                                 <h5 class="card-title" id="name1"></h5>
                             </div>
                             <div class="card-section">
-                                <img class="fitImage" id="img1" />   
-                            </div>                                   
+                                <img class="fitImage" id="img1" alt="second highest valued cryptocurrency icon" />
+                            </div>
                             <div class="card-section">
-                                <p >$<span class="card-text" id="price1"></span></p>
+                                <p>$<span class="card-text" id="price1"></span></p>
                             </div>
                         </div>
                     </div>
@@ -80,23 +80,23 @@
                                 <h5 class="card-title" id="name2"></h5>
                             </div>
                             <div class="card-section">
-                                <img class="fitImage" id="img2" />   
-                            </div>                               
+                                <img class="fitImage" id="img2" alt="third highest valued cryptocurrency icon"/>
+                            </div>
                             <div class="card-section">
-                                <p >$<span class="card-text" id="price2"></span></p>
+                                <p>$<span class="card-text" id="price2"></span></p>
                             </div>
                         </div>
                     </div>
                     <div class="cell small-12 medium-6 large-3">
                         <div class="card">
                             <div class="card-divider">
-                                <h5 class="card-title" id="name3"></h5>
+                                <h5 class="card-title" id="name3" ></h5>
                             </div>
                             <div class="card-section">
-                                <img class="fitImage" id="img3" />   
-                            </div>                                    
+                                <img class="fitImage" id="img3" alt="fourth highest valued cryptocurrency icon" />
+                            </div>
                             <div class="card-section">
-                                <p >$<span class="card-text" id="price3"></span></p>
+                                <p>$<span class="card-text" id="price3"></span></p>
                             </div>
                         </div>
                     </div>
@@ -109,10 +109,10 @@
                                 <h5 class="card-title" id="name4"></h5>
                             </div>
                             <div class="card-section">
-                                <img class="fitImage" id="img4" />   
-                            </div>                                    
+                                <img class="fitImage" id="img4" alt="fifth highest valued cryptocurrency icon" />
+                            </div>
                             <div class="card-section">
-                                <p >$<span class="card-text" id="price4"></span></p>
+                                <p>$<span class="card-text" id="price4"></span></p>
                             </div>
                         </div>
                     </div>
@@ -122,10 +122,10 @@
                                 <h5 class="card-title" id="name5"></h5>
                             </div>
                             <div class="card-section">
-                                <img class="fitImage" id="img5" />   
-                            </div>                                   
+                                <img class="fitImage" id="img5" alt="sixth highest valued cryptocurrency icon"/>
+                            </div>
                             <div class="card-section">
-                                <p >$<span class="card-text" id="price5"></span></p>
+                                <p>$<span class="card-text" id="price5"></span></p>
                             </div>
                         </div>
                     </div>
@@ -135,10 +135,11 @@
                                 <h5 class="card-title" id="name6"></h5>
                             </div>
                             <div class="card-section">
-                                <img class="fitImage" id="img6" />   
-                            </div>                            <div class="card-section">
-                                <p >$<span class="card-text" id="price6"></span></p>
-                                    
+                                <img class="fitImage" id="img6" alt="Seventh highest valued cryptocurrency icon" />
+                            </div>
+                            <div class="card-section">
+                                <p>$<span class="card-text" id="price6"></span></p>
+
                             </div>
                         </div>
                     </div>
@@ -148,10 +149,10 @@
                                 <h5 class="card-title" id="name7"></h5>
                             </div>
                             <div class="card-section">
-                                <img class="fitImage" id="img7" />   
-                            </div>                            
+                                <img class="fitImage" id="img7" alt="eighth highest valued cryptocurrency icon"/>
+                            </div>
                             <div class="card-section">
-                                <p >$<span class="card-text" id="price7"></span></p>
+                                <p>$<span class="card-text" id="price7"></span></p>
                             </div>
                         </div>
                     </div>
@@ -168,8 +169,8 @@
                     </div>
                     <div id="saved-coins-container" class="card-section"></div>
                 </div>
-                <div class = "clear-all-button">
-                    <button id="clear-button" class="btn">Clear Saved Coins</button>
+                <div class="clear-all-button">
+                    <button id="clear-button" class="button">Clear Saved Coins</button>
                 </div>
             </div>
             <!-- searched coins container -->
@@ -179,16 +180,35 @@
         </div>
     </main>
 
+    <!--Modal Test-->
+    <div class="container">
+        <div class="modal" id="terms">
+            <div class="modal-content" id="grumpy-text">
+                Please enter a valid Crypto Currency.
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="modal" id="connection">
+            <div class="modal-content">
+                Unable to connect to CoinGecko.
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div>
             <h5>&copy;Crypto-Checker! by Kole Ervine, John Clark, Jordan Otterson, and Kelly Lee </h5>
         </div>
         <div class="git-link">
-            <a href="https://github.com/BullMooseDev/TEAMPROJ1" target="_blank"><img src="./assets/images/icons8-github-squared-96.png" class="git-img"/></a>
+            <a href="https://github.com/BullMooseDev/TEAMPROJ1" target="_blank"><img
+                    src="./assets/images/icons8-github-squared-96.png" class="git-img" /></a>
         </div>
     </footer>
-    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js/script.js"></script>
+
 </body>
 
 </html>

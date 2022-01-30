@@ -1,6 +1,6 @@
 body {
     font-family: 'Rajdhani', sans-serif;
-    margin: 1rem;
+    /* margin: 1rem; commenting this out fixed the weird overlap problem there was previously */
 }
 
 .nav-bar {
@@ -8,20 +8,15 @@ body {
     flex-wrap: wrap;
     width: 100%;
     background-color: #011627;
+    overflow: hidden;
+    z-index: 9001;
 }
 
 .title {
     display: flex;
     padding-left: 10px;
     color: white;
-}
-
-.nav-wrapper {
-    margin-left: auto;
-}
-
-#coin-name {
-    border: none;
+    margin-left: 5%;
 }
 
 h1 {
@@ -30,11 +25,25 @@ h1 {
     font-size: 3rem;
 }
 
-form {
+.search-form {
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: end;
+    width: 65%;
+}
+
+.material-icons {
+    color: white;
+    margin: 15px 10px 0 0;
+}
+
+input[type=text] {
+    color: white;
+}
+
+.search-btn {
+    margin: 10px 0 0 10px;
+
 }
 
 .hero {
@@ -42,9 +51,8 @@ form {
     background-size: cover;
     background-position: center;
     display: flex;
-    height: 25rem;
+    height: 20rem;
     position: relative;
-
 }
 
 main {
@@ -150,17 +158,50 @@ footer {
     width: 150%;
 }
 
+/* attemtping to create a sticky navbar */
 
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
 
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (max-width: 980px) {
+    .search-form {
+        width: 60%;
+    }
 
+}
+
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+@media only screen and (max-width: 768px) {
+    .search-form {
+        width: 60%;
+    }
+}
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media only screen and (max-width: 575px) {
+
+    .title {
+        padding-left: 20%;
+    }
+
+    .search-form {
+        width: 100%;
+        margin-right: 25%;
+    }
+}
 
 @media only screen and (max-width: 320px) {
-    /* For mobiles: CSS */
+    
     .nav-bar {
         width: 100%;
+        height: 22%;
     }
     .title {
-        padding-left: 15%;
+        padding-left: 10%;
     }
 
     h1 {
@@ -168,19 +209,11 @@ footer {
     }
 
     .search-form {
-        margin-left: 20%;
+        width: 100%;
+        margin-left: 15%;
     }
 
-    .hero {
-        height: 10rem;
+    .search-btn {
+        margin-left: 100%;
     }
 }
-
-@media only screen and (min-width: 600px) {
-    /* For tablets: CSS */
-}
-
-@media only screen and (min-width: 768px) {
-    /* For desktop: CSS */
-}
-
