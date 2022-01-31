@@ -170,7 +170,7 @@ footer {
 }
 
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1063px) {
     .search-form {
         width: 60%;
     }
@@ -178,9 +178,13 @@ footer {
 }
 
 /* MEDIA QUERY FOR TABLETS AND SMALLER */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 911px) {
     .search-form {
         width: 60%;
+    }
+
+    #CryptoCheckerH1{
+
     }
 }
 
