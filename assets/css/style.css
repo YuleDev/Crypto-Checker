@@ -180,24 +180,24 @@ footer {
 /* MEDIA QUERY FOR TABLETS AND SMALLER */
 @media only screen and (max-width: 911px) {
     .search-form {
-        width: 60%;
-    }
-
-    #CryptoCheckerH1{
-
+        width: 50%; /* was 60 previously */
+        display: flex;
     }
 }
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: 708px /* was 575 before */) {
 
     .title {
-        padding-left: 20%;
+        padding-left: 25%;
+        width: 100%;
+        margin-right: 25%;
     }
 
     .search-form {
         width: 100%;
         margin-right: 25%;
+        margin-left: 25%;
     }
 }
 
