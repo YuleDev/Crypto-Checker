@@ -1,11 +1,9 @@
 # TEAMPROJ1
 
 ## Repo Url Link
-<!-- Below is the link to the project REPO -->  Below is the link to the project REPO
 https://github.com/BullMooseDev/TEAMPROJ1
 
 ## Deployed Url Link
-<!-- Below is the link to the deployed project -->  Below is the link to the deployed project
 https://bullmoosedev.github.io/TEAMPROJ1/
 
 ## Description and Scope of the Project
