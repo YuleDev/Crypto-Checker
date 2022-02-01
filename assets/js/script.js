@@ -373,8 +373,19 @@ console.log(data);
     }
 };
 
+//from line 377-383 is a new button to clear old coin card from page
+var clearSearchButtonEl = document.querySelector("#clear-search-button");
+
+var clearSearchedCoin = function(event) {
+    typedContainerEl.textContent = "";
+}
+
+clearSearchButtonEl.addEventListener("click", clearSearchedCoin);
+
 var clearAllCoins = function (event) {
     savedCoinsContainerEl.textContent = "";
+    /* typedContainerEl.textContent = "";
+     this line makes it so clearsavedcoins deletes the searched coin card*/
     tasks = [];
     saveTasks();
 };
