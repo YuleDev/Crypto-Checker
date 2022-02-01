@@ -60,6 +60,15 @@ main {
     margin-top: 1rem;
 }
 
+.page-count {
+    text-align: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: x-large;
+    font-weight: bolder;
+    color: black;
+    margin: 0 10px 0 10px;
+}
+
 .trending-crypto {
     border-bottom: 2px solid #011627;
     padding-bottom: 30px;
@@ -135,6 +144,12 @@ p {
 
 .card-text {
     font-family: 'Rajdhani', sans-serif;
+}
+
+.card-title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 h5 {
