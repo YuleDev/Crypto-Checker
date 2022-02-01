@@ -277,7 +277,7 @@ var getAnotherPlusIndex = function () {
                 return response.json();
             }
         }).then(function (cryptoInfo) {
-            displayPlusIndex(cryptoInfo.data.coins);
+            displayAnotherPlusIndex(cryptoInfo.data.coins);
             console.log(cryptoInfo);
         });
 };
@@ -336,7 +336,7 @@ console.log(data);
 };
 
 // shows top 16-24
-var displayPlusIndex = function (data) {
+var displayAnotherPlusIndex = function (data) {
 console.log(data);
     for (var i = 16; i < data.length; i++) {
         console.log(i);
