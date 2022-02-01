@@ -207,9 +207,11 @@ var typedCoinDisplay = function (coinData) {
 
     var coinLinkEl = document.createElement("a");
     coinLinkEl.classList = "card-text";
+    coinLinkEl.setAttribute("href", coinData.links.homepage[0]);
     coinLinkEl.textContent = coinData.links.homepage[0];
     firstCardEl.appendChild(coinLinkEl);
 
+    console.log(coinData);
 
     //adds this to the HTML
     typedContainerEl.appendChild(firstCardEl);
@@ -298,6 +300,10 @@ var displayMainIndex = function (data) {
         var nameElement = document.querySelector(forName);
         nameElement.textContent = i + 1 + ". " + data[i].name;
 
+        var forLink = "#link" + [i];
+        var linkElement = document.querySelector(forLink);
+        linkElement.setAttribute("href", data[i].coinrankingUrl);
+
         var forPrice = "#price" + [i];
         var priceElement = document.querySelector(forPrice);
         priceElement.textContent = data[i].price;
@@ -322,6 +328,10 @@ console.log(data);
         var nameElement = document.querySelector(forName);
         nameElement.textContent = i + 1 + ". " + data[i].name;
 
+        var forLink = "#link" + [i - 8];
+        var linkElement = document.querySelector(forLink);
+        linkElement.setAttribute("href", data[i].coinrankingUrl);
+
         var forPrice = "#price" + [i - 8];
         var priceElement = document.querySelector(forPrice);
         priceElement.textContent = data[i].price;
@@ -345,6 +355,10 @@ console.log(data);
         console.log(data[i].name);
         var nameElement = document.querySelector(forName);
         nameElement.textContent = i + 1 + ". " + data[i].name;
+
+        var forLink = "#link" + [i - 16];
+        var linkElement = document.querySelector(forLink);
+        linkElement.setAttribute("href", data[i].coinrankingUrl);
 
         var forPrice = "#price" + [i - 16];
         var priceElement = document.querySelector(forPrice);
