@@ -75,6 +75,10 @@ main {
 
 }
 
+.shoppingCart {
+    /* nothing here for now */
+}
+
 header {
     text-align: center;
     border-bottom: 2px solid #011627;
@@ -93,6 +97,11 @@ h2, h4 {
 }
 
 .card-divider {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
     background-color: #002855;
     color: white;
     font-family: 'Rajdhani', sans-serif;
