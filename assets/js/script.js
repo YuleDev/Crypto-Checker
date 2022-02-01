@@ -3,6 +3,7 @@ var coinInputEl = document.querySelector("#coin-name");
 var typedContainerEl = document.querySelector("#typed-container");
 var savedCoinsContainerEl = document.querySelector("#saved-coins-container");
 var plusEightEl = document.querySelector("#plus-eight");
+var plusAnotherEightEl = document.querySelector("#plus-another-eight");
 var topEightEl = document.querySelector("#top-eight");
 // var clearButtonEl = document.querySelector("#clear-button");
 const clearButtonEl = document.getElementById("clear-button");
@@ -258,6 +259,29 @@ var getPlusIndex = function () {
         });
 };
 
+//Fetches Top 16 to be sent down to displayPlusIndex to parse through and only grab 16-24
+var getAnotherPlusIndex = function () {
+
+    var apiUrl = "https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers=1&orderBy=price&orderDirection=desc&limit=24&offset=0";
+
+    fetch(apiUrl, {
+        "method": "GET",
+        "headers": {
+            "x-access-key": "3c29bda109d4290191bea7abecd0074bfe38d5634e0e6830",
+            "x-rapidapi-host": "coinranking1.p.rapidapi.com",
+            "x-rapidapi-key": "f112fe985emsh7fd3ffcf23a79fbp14c66djsnd4ab259a0c95"
+        }
+    })
+        .then(function (response) {
+            if (response.ok) {
+                return response.json();
+            }
+        }).then(function (cryptoInfo) {
+            displayPlusIndex(cryptoInfo.data.coins);
+            console.log(cryptoInfo);
+        });
+};
+
 //adds commas to the current price
 function separator(numb) {
     var str = numb.toString().split(".");
@@ -311,6 +335,30 @@ console.log(data);
     }
 };
 
+// shows top 16-24
+var displayPlusIndex = function (data) {
+console.log(data);
+    for (var i = 16; i < data.length; i++) {
+        console.log(i);
+        var forName = "#name" + [i - 16];
+        console.log(forName);
+        console.log(data[i].name);
+        var nameElement = document.querySelector(forName);
+        nameElement.textContent = i + 1 + ". " + data[i].name;
+
+        var forPrice = "#price" + [i - 16];
+        var priceElement = document.querySelector(forPrice);
+        priceElement.textContent = data[i].price;
+
+        var forIcon = "#img" + [i - 16];
+        var imgElement = document.querySelector(forIcon);
+        imgElement.setAttribute("src", data[i].iconUrl);
+
+        var numberBeauty = Math.floor(data[i].price);
+        priceElement.textContent = separator(numberBeauty);
+    }
+};
+
 var clearAllCoins = function (event) {
     savedCoinsContainerEl.textContent = "";
     tasks = [];
@@ -336,6 +384,9 @@ topEightEl.addEventListener("click", getMainIndex);
 
 //listens for when we click 8-16
 plusEightEl.addEventListener("click", getPlusIndex);
+
+//listens for when we click 17-24
+plusAnotherEightEl.addEventListener("click", getAnotherPlusIndex);
 
 //listen to see if the clear button is clicked
 clearButtonEl.addEventListener("click", clearAllCoins);
