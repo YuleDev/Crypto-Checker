@@ -2,6 +2,8 @@ var coinFormEl = document.querySelector("#coin-form");
 var coinInputEl = document.querySelector("#coin-name");
 var typedContainerEl = document.querySelector("#typed-container");
 var savedCoinsContainerEl = document.querySelector("#saved-coins-container");
+var plusEightEl = document.querySelector("#plus-eight");
+var topEightEl = document.querySelector("#top-eight");
 // var clearButtonEl = document.querySelector("#clear-button");
 const clearButtonEl = document.getElementById("clear-button");
 var tasks = [];
@@ -156,7 +158,7 @@ var buttonClickHandler = function (event) {
 var typedCoinDisplay = function (coinData) {
     var numb = coinData.market_data.current_price.usd.toFixed(2);
     var numby = coinData.developer_data.subscribers;
-
+    
     /* if the coin is worthless the tofixed function on line 157 takes the price down to 0.00 */
 
     //create a div to store searched data
@@ -202,6 +204,12 @@ var typedCoinDisplay = function (coinData) {
     subscribersEl.textContent = "Number of Subscribers: " + separator(numby);
     firstCardEl.appendChild(subscribersEl);
 
+    var coinLinkEl = document.createElement("a");
+    coinLinkEl.classList = "card-text";
+    coinLinkEl.textContent = coinData.links.homepage[0];
+    firstCardEl.appendChild(coinLinkEl);
+
+
     //adds this to the HTML
     typedContainerEl.appendChild(firstCardEl);
 };
@@ -225,10 +233,30 @@ var getMainIndex = function () {
             }
         }).then(function (cryptoInfo) {
             displayMainIndex(cryptoInfo.data.coins);
+        });
+};
+//Fetches Top 16 to be sent down to displayPlusIndex to parse through and only grab 8-16
+var getPlusIndex = function () {
+
+    var apiUrl = "https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers=1&orderBy=price&orderDirection=desc&limit=16&offset=0";
+
+    fetch(apiUrl, {
+        "method": "GET",
+        "headers": {
+            "x-access-key": "3c29bda109d4290191bea7abecd0074bfe38d5634e0e6830",
+            "x-rapidapi-host": "coinranking1.p.rapidapi.com",
+            "x-rapidapi-key": "f112fe985emsh7fd3ffcf23a79fbp14c66djsnd4ab259a0c95"
+        }
+    })
+        .then(function (response) {
+            if (response.ok) {
+                return response.json();
+            }
+        }).then(function (cryptoInfo) {
+            displayPlusIndex(cryptoInfo.data.coins);
             console.log(cryptoInfo);
         });
 };
-
 
 //adds commas to the current price
 function separator(numb) {
@@ -259,6 +287,30 @@ var displayMainIndex = function (data) {
     }
 };
 
+//Shows top 8-16
+var displayPlusIndex = function (data) {
+console.log(data);
+    for (var i = 8; i < data.length; i++) {
+        console.log(i);
+        var forName = "#name" + [i - 8];
+        console.log(forName);
+        console.log(data[i].name);
+        var nameElement = document.querySelector(forName);
+        nameElement.textContent = i + 1 + ". " + data[i].name;
+
+        var forPrice = "#price" + [i - 8];
+        var priceElement = document.querySelector(forPrice);
+        priceElement.textContent = data[i].price;
+
+        var forIcon = "#img" + [i - 8];
+        var imgElement = document.querySelector(forIcon);
+        imgElement.setAttribute("src", data[i].iconUrl);
+
+        var numberBeauty = Math.floor(data[i].price);
+        priceElement.textContent = separator(numberBeauty);
+    }
+};
+
 var clearAllCoins = function (event) {
     savedCoinsContainerEl.textContent = "";
     tasks = [];
@@ -268,6 +320,8 @@ var clearAllCoins = function (event) {
 //Kole main display call
 getMainIndex();
 
+// getPlusIndex();
+
 //the call to load from local storage
 loadTasks();
 
@@ -276,6 +330,12 @@ coinFormEl.addEventListener("submit", formSubmitHandler);
 
 //listen to see if a city history button has been clicked
 savedCoinsContainerEl.addEventListener("click", buttonClickHandler);
+
+//listens for the when we click 1-8
+topEightEl.addEventListener("click", getMainIndex);
+
+//listens for when we click 8-16
+plusEightEl.addEventListener("click", getPlusIndex);
 
 //listen to see if the clear button is clicked
 clearButtonEl.addEventListener("click", clearAllCoins);
