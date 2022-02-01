@@ -1,10 +1,10 @@
-# TEAMPROJ1
+# Crypto-Checker
 
 ## Repo Url Link
-https://github.com/BullMooseDev/TEAMPROJ1
+https://github.com/BullMooseDev/Crypto-Checker
 
 ## Deployed Url Link
-https://bullmoosedev.github.io/TEAMPROJ1/
+https://bullmoosedev.github.io/Crypto-Checker/
 
 ## Description and Scope of the Project
 Crypto-Checker is a website for those interested in CryptoCurrency and various alternatives to central bank controlled fiat monies. It allows its user's to check the prices of crypto via search and also shows the user the top 8 most valuable crypto on the market at the given time.
