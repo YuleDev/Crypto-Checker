@@ -154,8 +154,10 @@ var buttonClickHandler = function (event) {
 
 //display the fetched data to the HTML
 var typedCoinDisplay = function (coinData) {
-    var numb = coinData.market_data.current_price.usd;
+    var numb = coinData.market_data.current_price.usd.toFixed(2);
     var numby = coinData.developer_data.subscribers;
+
+    /* if the coin is worthless the tofixed function on line 157 takes the price down to 0.00 */
 
     //create a div to store searched data
     var firstCardEl = document.createElement("div");
