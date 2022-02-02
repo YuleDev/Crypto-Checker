@@ -155,6 +155,10 @@ p {
     font-family: 'Rajdhani', sans-serif;
 }
 
+.link-color {
+    color: orange;
+}
+
 .card-title {
     text-overflow: ellipsis;
     overflow: hidden;

@@ -208,7 +208,7 @@ var typedCoinDisplay = function (coinData) {
     firstCardEl.appendChild(subscribersEl);
 
     var coinLinkEl = document.createElement("a");
-    coinLinkEl.classList = "card-text";
+    coinLinkEl.classList = "card-text, link-color";
     coinLinkEl.setAttribute("href", coinData.links.homepage[0]);
     coinLinkEl.textContent = coinData.links.homepage[0];
     firstCardEl.appendChild(coinLinkEl);
