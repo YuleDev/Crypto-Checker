@@ -114,8 +114,10 @@ var getFeaturedCoinData = function (coin) {
 //modals to show both kinds of errors.
 var invalidEntry = function (coin) {
     var elems = document.querySelector('#terms');
+    // elems.setAttribute("style", "top: 25%");
     var grumpy = document.querySelector('#grumpy-text');
-    grumpy.innerHTML = 'Unfortunately "' + coin + '" doesnt exist. Please check your spelling and try again!';
+    // grumpy.setAttribute("class", "musty");
+    grumpy.innerHTML = 'Unfortunately "' + coin + '" does not exist. Please check your spelling and try again!';
     var instance = M.Modal.init(elems);
     instance.open();
 };

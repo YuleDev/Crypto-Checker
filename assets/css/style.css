@@ -188,6 +188,10 @@ footer {
     width: 150%;
 }
 
+.modal {
+    top: 15% !important
+}
+
 /* attemtping to create a sticky navbar */
 
 .sticky {
@@ -228,6 +232,11 @@ footer {
     .sticky {
         top: -10px;
     }
+
+    .modal {
+        top: 17% !important
+    }
+    
 }
 
 
