@@ -179,7 +179,7 @@ var typedCoinDisplay = function (coinData) {
     //show current price
     var priceEl = document.createElement("h6");
     priceEl.classList = "card-text";
-    priceEl.textContent = "Current Price: $" + separator(numb);
+    priceEl.textContent = "Current Price: $" + separator(numb) + " USD";
     firstCardEl.appendChild(priceEl);
     //show liquidity score
     var liquidityEl = document.createElement("h6");
@@ -212,8 +212,6 @@ var typedCoinDisplay = function (coinData) {
     coinLinkEl.setAttribute("href", coinData.links.homepage[0]);
     coinLinkEl.textContent = coinData.links.homepage[0];
     firstCardEl.appendChild(coinLinkEl);
-
-    console.log(coinData);
 
     //adds this to the HTML
     typedContainerEl.appendChild(firstCardEl);
@@ -315,7 +313,7 @@ var displayMainIndex = function (data) {
         imgElement.setAttribute("src", data[i].iconUrl);
 
         var numberBeauty = Math.floor(data[i].price);
-        priceElement.textContent = separator(numberBeauty);
+        priceElement.textContent = separator(numberBeauty) + " USD";
     }
 };
 
@@ -343,7 +341,7 @@ console.log(data);
         imgElement.setAttribute("src", data[i].iconUrl);
 
         var numberBeauty = Math.floor(data[i].price);
-        priceElement.textContent = separator(numberBeauty);
+        priceElement.textContent = separator(numberBeauty) + " USD";
     }
 };
 
@@ -371,7 +369,7 @@ console.log(data);
         imgElement.setAttribute("src", data[i].iconUrl);
 
         var numberBeauty = Math.floor(data[i].price);
-        priceElement.textContent = separator(numberBeauty);
+        priceElement.textContent = separator(numberBeauty) + " USD";
     }
 };
 
