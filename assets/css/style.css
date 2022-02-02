@@ -219,7 +219,7 @@ footer {
         justify-content: space-between;
     }
     .search-form {
-        width: 36%; /* was 60 previously */
+        width: 37%; /* was 60 previously */
         display: flex;
         justify-content: center;
     }
@@ -245,6 +245,10 @@ footer {
 
 
 
+@media screen and (max-width: 834px) {
+    .search-form {
+        width: 46%; /* was 60 previously */
+}
 
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
