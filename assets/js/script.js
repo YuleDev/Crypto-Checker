@@ -17,7 +17,7 @@ var saveTasks = function () {
 //gets items from local storage
 var loadTasks = function () {
     tasks = JSON.parse(localStorage.getItem("tasks"));
-    // console.log(tasks);
+    
 
     //local storage is empty this creates an empty array
     if (!tasks) {
@@ -37,7 +37,7 @@ var formSubmitHandler = function (event) {
     // get value from input element
     var coinTyped = coinInputEl.value.trim();
     var coinName = coinTyped.toLowerCase();
-    // console.log(coinName);
+    
 
     if (coinName) {
         getTypedCoinData(coinName);
@@ -62,10 +62,8 @@ var getTypedCoinData = function (coin) {
             // request was successful
             if (response.ok) {
                 response.json().then(function (data) {
-                    // console.log(data.id);
                     for (var i = 0; i < tasks.length; i++) {
                         if (data.id === tasks[i]) {
-                            console.log(coin);
                             getFeaturedCoinData(coin);
                             return;
                         }
@@ -96,7 +94,6 @@ var getFeaturedCoinData = function (coin) {
     // make a get request to url
     fetch(apiUrl)
         .then(function (response) {
-            // console.log(response);
             // request was successful
             if (response.ok) {
                 response.json().then(function (data) {
@@ -123,7 +120,6 @@ var invalidEntry = function (coin) {
 };
 
 var connectionErr = function () {
-    console.log("Connection error");
     var elems = document.querySelector('#connection');
     var instance = M.Modal.init(elems);
     instance.open();
@@ -131,7 +127,6 @@ var connectionErr = function () {
 
 //displays the saved coin button
 var displaySavedCoinButton = function (coin) {
-    // console.log(coin);
     //creates the coin button
     var coinEl = document.createElement("button");
     coinEl.setAttribute("data-coin", coin);
@@ -146,8 +141,7 @@ var displaySavedCoinButton = function (coin) {
 var buttonClickHandler = function (event) {
     // get the coin attribute from the clicked element
     var coin = event.target.getAttribute("data-coin");
-    // console.log(coin);
-
+    
     if (coin) {
         //calls the function to get the data without adding to history
         getFeaturedCoinData(coin);
@@ -161,10 +155,9 @@ var buttonClickHandler = function (event) {
 var typedCoinDisplay = function (coinData) {
     var numb = coinData.market_data.current_price.usd.toFixed(2);
     var numby = coinData.developer_data.subscribers;
-    console.log(coinData);
     var percenty = coinData.market_data.market_cap_change_percentage_24h.toFixed(2);
-    console.log(percenty);
-    /* if the coin is worthless the tofixed function on line 157 takes the price down to 0.00 */
+    
+    /* if the coin is worthless the tofixed function on line 156 takes the price down to 0.00 */
 
     //create a div to store searched data
     var firstCardEl = document.createElement("div");
@@ -264,7 +257,6 @@ var getPlusIndex = function () {
             }
         }).then(function (cryptoInfo) {
             displayPlusIndex(cryptoInfo.data.coins);
-            console.log(cryptoInfo);
         });
 };
 
@@ -287,7 +279,6 @@ var getAnotherPlusIndex = function () {
             }
         }).then(function (cryptoInfo) {
             displayAnotherPlusIndex(cryptoInfo.data.coins);
-            console.log(cryptoInfo);
         });
 };
 
@@ -330,12 +321,8 @@ var displayMainIndex = function (data) {
 
 //Shows top 8-16
 var displayPlusIndex = function (data) {
-console.log(data);
     for (var i = 8; i < data.length; i++) {
-        console.log(i);
         var forName = "#name" + [i - 8];
-        console.log(forName);
-        console.log(data[i].name);
         var nameElement = document.querySelector(forName);
         nameElement.textContent = i + 1 + ". " + data[i].name;
 
@@ -362,12 +349,8 @@ console.log(data);
 
 // shows top 16-24
 var displayAnotherPlusIndex = function (data) {
-console.log(data);
     for (var i = 16; i < data.length; i++) {
-        console.log(i);
         var forName = "#name" + [i - 16];
-        console.log(forName);
-        console.log(data[i].name);
         var nameElement = document.querySelector(forName);
         nameElement.textContent = i + 1 + ". " + data[i].name;
 
@@ -395,16 +378,17 @@ console.log(data);
 //from line 377-383 is a new button to clear old coin card from page
 var clearSearchButtonEl = document.querySelector("#clear-search-button");
 
+//clears the displayed searched coin
 var clearSearchedCoin = function(event) {
     typedContainerEl.textContent = "";
 }
 
 clearSearchButtonEl.addEventListener("click", clearSearchedCoin);
 
+//clears all the saved coins
 var clearAllCoins = function (event) {
     savedCoinsContainerEl.textContent = "";
-    /* typedContainerEl.textContent = "";
-     this line makes it so clearsavedcoins deletes the searched coin card*/
+    
     tasks = [];
     saveTasks();
 };
