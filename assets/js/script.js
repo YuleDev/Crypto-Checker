@@ -161,7 +161,9 @@ var buttonClickHandler = function (event) {
 var typedCoinDisplay = function (coinData) {
     var numb = coinData.market_data.current_price.usd.toFixed(2);
     var numby = coinData.developer_data.subscribers;
-    
+    console.log(coinData);
+    var percenty = coinData.market_data.market_cap_change_percentage_24h.toFixed(2);
+    console.log(percenty);
     /* if the coin is worthless the tofixed function on line 157 takes the price down to 0.00 */
 
     //create a div to store searched data
@@ -181,7 +183,12 @@ var typedCoinDisplay = function (coinData) {
     priceEl.classList = "card-text";
     priceEl.textContent = "Current Price: $" + separator(numb) + " USD";
     firstCardEl.appendChild(priceEl);
-    //show liquidity score
+    //show change percentage
+    var changeEl = document.createElement("h6");
+    changeEl.classList = "card-text";
+    changeEl.textContent = "Change: " + percenty + "%";
+    firstCardEl.appendChild(changeEl);
+    // //show liquidity score
     var liquidityEl = document.createElement("h6");
     liquidityEl.classList = "card-text";
     liquidityEl.textContent = "Liquidity Score: " + coinData.liquidity_score;
@@ -312,6 +319,10 @@ var displayMainIndex = function (data) {
         var imgElement = document.querySelector(forIcon);
         imgElement.setAttribute("src", data[i].iconUrl);
 
+        var forChange = "#change" + [i];
+        var changeElement = document.querySelector(forChange);
+        changeElement.textContent = data[i].change;
+
         var numberBeauty = Math.floor(data[i].price);
         priceElement.textContent = separator(numberBeauty) + " USD";
     }
@@ -340,6 +351,10 @@ console.log(data);
         var imgElement = document.querySelector(forIcon);
         imgElement.setAttribute("src", data[i].iconUrl);
 
+        var forChange = "#change" + [i - 8];
+        var changeElement = document.querySelector(forChange);
+        changeElement.textContent = data[i].change;
+
         var numberBeauty = Math.floor(data[i].price);
         priceElement.textContent = separator(numberBeauty) + " USD";
     }
@@ -367,6 +382,10 @@ console.log(data);
         var forIcon = "#img" + [i - 16];
         var imgElement = document.querySelector(forIcon);
         imgElement.setAttribute("src", data[i].iconUrl);
+
+        var forChange = "#change" + [i - 16];
+        var changeElement = document.querySelector(forChange);
+        changeElement.textContent = data[i].change;
 
         var numberBeauty = Math.floor(data[i].price);
         priceElement.textContent = separator(numberBeauty) + " USD";

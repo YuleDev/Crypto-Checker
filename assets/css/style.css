@@ -125,7 +125,8 @@ h2, h4 {
 
 p {
     color: #011627;
-    font-size: 2rem;
+    font-size: 1.4rem;
+    margin-bottom: 0;
 }
 
 .saved-coins {
