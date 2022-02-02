@@ -233,16 +233,22 @@ footer {
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 /* @media only screen and (max-width: 708px) {
 
-    .title {
-        padding-left: 25%;
-        width: 100%;
-        margin-right: 25%;
+    .nav-bar {
+        justify-content: center;
+    }
+    .search-form {
+        width: 84%; 
+        display: flex;
+        justify-content: center;
     }
 
-    .search-form {
-        width: 100%;
-        margin-right: 25%;
-        margin-left: 25%;
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .title {
+        padding-left: 0px;
+        margin-left: 0%;
     }
 } */
 
