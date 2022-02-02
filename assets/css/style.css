@@ -249,7 +249,7 @@ footer {
     .search-form {
         width: 46%; /* was 60 previously */
 }
-
+}
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media only screen and (max-width: 650px) {
