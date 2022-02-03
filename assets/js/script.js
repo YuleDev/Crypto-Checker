@@ -435,9 +435,6 @@ plusAnotherEightEl.addEventListener("click", getAnotherPlusIndex);
 //listen to see if the clear button is clicked
 clearButtonEl.addEventListener("click", clearAllCoins);
 
-
-
-
 // attempting to add sticky navbar to our project page
 window.onscroll = function () { navbarfunction() };
 
@@ -455,9 +452,3 @@ function navbarfunction() {
         navbar.classList.remove("sticky");
     }
 };
-
-
-
-
-
-
